@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Copyright (C) 2018 DevLear - All Rights Reserved.
+
+    This file is a part of BeerHub application.
+
+    Confidential and Proprietary.
+    Unauthorized copying of this file, via any medium is strictly prohibited.
+-->
+<resources>
+
+    <!--
+        The version of content in app resources. We don't support upgrade and/or downgrade
+        content's version, now
+    -->
+    <integer name="content_version">2</integer>
+
+    <!-- The list of data files in app resources -->
+    <string-array name="content_list">
+        <item>content</item>
+    </string-array>
+
+    <!-- City: Prague -->
+    <integer name="city_prague_id">4</integer>
+    <string name="city_prague_name">Prague</string>
+
+    <!-- The IDs of content's resources -->
+    <item name="content_icon" type="id" />
+
+</resources>

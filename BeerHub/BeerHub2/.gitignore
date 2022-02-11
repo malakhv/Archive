@@ -1,0 +1,24 @@
+#
+# The common gitignore file for whole project
+#
+
+# Temporary files
+*.tmp
+*.temp
+tmp/
+temp/
+
+# Generated files
+gen/
+out/
+
+# Log Files
+*.lg
+*.log
+
+# Keystore files
+*.jks
+*.keystore
+
+# Version control
+vcs.xml

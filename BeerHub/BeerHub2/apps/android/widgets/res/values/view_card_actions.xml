@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Copyright (C) 2018 DevLear - All Rights Reserved.
+
+    This file is a part of BeerHub project.
+
+    Confidential and Proprietary.
+    Unauthorized copying of this file, via any medium is strictly prohibited.
+-->
+<resources>
+
+    <!-- The ID's of internal views in this custom view -->
+    <item name="card_actions" type="id" />
+    <item name="card_actions_fav" type="id" />
+    <item name="card_actions_map" type="id" />
+    <item name="card_actions_web" type="id" />
+    <item name="card_actions_wiki" type="id" />
+    <item name="card_actions_share" type="id" />
+    <item name="card_actions_call" type="id" />
+    <item name="card_actions_note" type="id" />
+    <item name="card_actions_more" type="id" />
+
+    <!-- The actions' descriptions -->
+    <string name="card_actions_fav">Favorite</string>
+    <string name="card_actions_map">Map</string>
+    <string name="card_actions_web">Web</string>
+    <string name="card_actions_wiki">Wiki</string>
+    <string name="card_actions_share">Share</string>
+    <string name="card_actions_call">Call</string>
+    <string name="card_actions_note">Note</string>
+    <string name="card_actions_more">...</string>
+
+    <attr name="actions" format="flags">
+        <flag name="fav" value="1" />
+        <flag name="map" value="2" />
+        <flag name="web" value="4" />
+        <flag name="wiki" value="8" />
+        <flag name="share" value="16" />
+        <flag name="call" value="32" />
+        <flag name="note" value="64" />
+        <flag name="more" value="1024" />
+    </attr>
+
+    <declare-styleable name="CardActions">
+        <attr name="actions" />
+        <attr name="favOnIcon" format="reference|color" />
+        <attr name="favOffIcon" format="reference|color" />
+        <attr name="mapIcon" format="reference|color" />
+        <attr name="webIcon" format="reference|color" />
+        <attr name="shareIcon" format="reference|color" />
+        <attr name="callIcon" format="reference|color" />
+        <attr name="noteIcon" format="reference|color" />
+        <attr name="moreIcon" format="reference|color" />
+    </declare-styleable>
+
+    <!-- The style item for this view -->
+    <attr name="cardActionsStyle" format="reference" />
+
+    <!-- The default style for this view -->
+    <style name="Widget.CardActions">
+        <item name="android:orientation">horizontal</item>
+        <item name="android:padding">0dp</item>
+    </style>
+
+</resources>

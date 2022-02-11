@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Copyright (C) 2018 DevLear - All Rights Reserved.
+
+    This file is a part of BeerHub project.
+
+    Confidential and Proprietary.
+    Unauthorized copying of this file, via any medium is strictly prohibited.
+-->
+
+<!--
+    The value resources related to InfoCard widget (view). All resources in this file
+    should have "info_card_" prefix (except for styles).
+
+    Author: Mikhail.Malakhov
+-->
+<resources>
+
+    <!-- The ID's of internal views in this custom view -->
+    <item name="info_card_icon" type="id" />
+    <item name="info_card_title" type="id" />
+    <item name="info_card_summary" type="id" />
+    <item name="info_card_text" type="id" />
+
+    <!-- View InfoCard attributes -->
+    <declare-styleable name="InfoCard">
+        <attr name="android:icon" />
+        <attr name="android:title" />
+        <attr name="android:summary" />
+        <attr name="android:text" />
+        <!-- Should show info block or not -->
+        <attr name="showText" format="boolean" />
+        <!-- The internal layout of this view -->
+        <attr name="internalLayout" format="reference" />
+    </declare-styleable>
+
+    <!-- The stub data for this view -->
+    <drawable name="info_card_stub_icon">@drawable/ic_no_logo</drawable>
+    <string name="info_card_stub_title" translatable="false">The world best test Place</string>
+    <string name="info_card_stub_summary" translatable="false">Light Beer, Dark Beer, Amber Beer</string>
+    <string name="info_card_stub_text" translatable="false">Enjoy the significant atmosphere of the original restaurants of the world best test Place. Enjoy the significant atmosphere of the original restaurants of the world best test Place.</string>
+
+    <!-- The style item for this view -->
+    <attr name="infoCardStyle" format="reference" />
+
+    <!-- The default style for this view -->
+    <style name="Widget.InfoCard">
+        <item name="internalLayout">@layout/view_info_card</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">false</item>
+        <item name="android:background">?android:windowBackground</item>
+    </style>
+
+</resources>

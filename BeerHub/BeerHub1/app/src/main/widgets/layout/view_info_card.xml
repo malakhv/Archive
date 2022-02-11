@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Copyright (C) 2018 DevLear - All Rights Reserved.
+
+    This file is a part of BeerHub application.
+
+    Confidential and Proprietary.
+    Unauthorized copying of this file, via any medium is strictly prohibited.
+-->
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/view_layout_padding"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:gravity="center_vertical">
+
+        <!-- Icon -->
+        <ImageView
+            android:id="@id/info_card_icon"
+            android:layout_width="@dimen/view_icon_size"
+            android:layout_height="@dimen/view_icon_size"
+            android:src="@drawable/info_card_stub_icon"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="@dimen/view_layout_padding"
+            />
+
+        <!-- Title and summary -->
+        <LinearLayout
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@id/info_card_icon">
+
+            <!-- Title -->
+            <TextView
+                android:id="@id/info_card_title"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:textColor="?android:textColorPrimary"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                tools:text="@string/info_card_stub_title" />
+
+            <!-- Summary android:textSize="12sp" -->
+            <TextView
+                android:id="@id/info_card_summary"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:maxLines="2"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="?android:textColorSecondary"
+                tools:text="@string/info_card_stub_summary"/>
+
+        </LinearLayout>
+    </RelativeLayout>
+
+    <!-- Text -->
+    <TextView
+        android:id="@id/info_card_text"
+        android:paddingTop="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxLines="20"
+        android:textColor="?android:textColorSecondary"
+        tools:text="@string/info_card_stub_text"/>
+
+</merge>

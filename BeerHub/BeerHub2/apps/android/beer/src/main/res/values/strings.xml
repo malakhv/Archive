@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Copyright (C) 2018 DevLear - All Rights Reserved.
+
+    This file is a part of BeerHub application.
+
+    Confidential and Proprietary.
+    Unauthorized copying of this file, via any medium is strictly prohibited.
+-->
+<resources>
+    <string name="app_name" translatable="false">BeerHub</string>
+    <string name="app_name_short" translatable="false">Beer</string>
+    <string name="msg_fav_empty">Your favorite list for this city is empty…</string>
+
+    <!-- Activity Hub -->
+    <string name="act_about">About</string>
+    <string name="act_settings">Settings</string>
+
+    <!-- Activity "About" -->
+    <string name="about_text">Everyone has the right to a mug of fresh delicious beer!\n\nEnjoy, but don\'t forget, excessive alcohol consumption is harmful to your health!</string>
+    <string name="rate_app">Rate this app</string>
+    <string name="beer_for_dev">A mug of beer for developers!</string>
+</resources>

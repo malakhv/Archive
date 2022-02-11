@@ -1,0 +1,68 @@
+/* *
+ * Copyright (C) 2018 DevLear - All Rights Reserved.
+ *
+ * This file is a part of BeerHub project.
+ *
+ * Confidential and Proprietary.
+ * Unauthorized copying of this file, via any medium is strictly prohibited.
+ * */
+
+plugins { id 'com.android.application' }
+
+// Using DevLear signing config
+if (project.hasProperty("signing")) {
+    apply from: project.property("signing") + "signing.gradle"
+}
+
+android {
+    defaultConfig {
+        applicationId "com.devlear.beerhub"
+        versionCode 1
+        versionName "1.0"
+        multiDexEnabled false
+    }
+
+    buildTypes {
+        debug {
+            shrinkResources false
+            minifyEnabled false
+            signingConfig signingConfigs.appDebug
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        release {
+            shrinkResources true
+            minifyEnabled true
+            signingConfig signingConfigs.appRelease
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+}
+
+// Android config
+apply from: rootProject.rootDir.getAbsolutePath() + "/config.gradle"
+
+// App version
+apply from: rootProject.rootDir.getAbsolutePath() + "/version.gradle"
+
+dependencies {
+
+    // Internal dependencies
+    implementation project(':crypto')
+    implementation project(':utils')
+    implementation project(':widgets')
+
+    // Our own dependencies
+    implementation 'com.malakhv.libs:logcat:0.1.2'
+    implementation 'com.malakhv.libs:droid:0.1.0'
+
+    // External dependencies
+    implementation 'androidx.recyclerview:recyclerview:1.2.0'
+    implementation 'com.google.android.gms:play-services-maps:17.0.0'
+
+}

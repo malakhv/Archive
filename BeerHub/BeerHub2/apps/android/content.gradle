@@ -1,0 +1,109 @@
+/* *
+ * Copyright (C) 2021 DevLear - All Rights Reserved.
+ *
+ * This file is a part of BeerHub project.
+ *
+ * Confidential and Proprietary.
+ * Unauthorized copying of this file, via any medium is strictly prohibited.
+ * */
+
+/* Define global content property */
+ext {
+    CONTENT_DIR = "./../../content"
+    CONTENT_OUT_DIR = CONTENT_DIR + "/out"
+    CONTENT_FILE_NAME = "content.dat"
+    CONTENT_PATH = CONTENT_OUT_DIR + "/" + CONTENT_FILE_NAME
+}
+
+/**
+ * Checks an app content exists.
+ * */
+task checkContent() {
+    group 'content'
+    description 'Checks an app content exists on "content" dir'
+    doFirst {
+        File file = file(CONTENT_PATH)
+        println('Check for: ' + file.toString())
+        if (!file.exists()) {
+            throw new GradleException("App content doesn't found! Please make it!")
+        }
+        println('App content: ' + file.toString())
+    }
+}
+
+/**
+ * Clean app content.
+ * */
+task cleanContent (type: Delete) {
+    group 'content'
+    description 'Clean app content'
+    doFirst {
+        File file = file(CONTENT_OUT_DIR)
+        delete file
+    }
+}
+
+/**
+ * Make an app content for debug
+ * */
+task makeContentForDebug(type: Exec) {
+    group 'content'
+    description 'Make an app content for Debug'
+    workingDir CONTENT_DIR
+    commandLine 'python', 'content.py'
+}
+makeContentForDebug.dependsOn(cleanContent)
+makeContentForDebug.finalizedBy(checkContent)
+
+/**
+ * Make an app content for release
+ * */
+task makeContentForRelease(type: Exec) {
+    group 'content'
+    description 'Make an app content for Release'
+    workingDir CONTENT_DIR
+    commandLine 'python', 'content.py', '-r'
+}
+makeContentForRelease.dependsOn(cleanContent)
+makeContentForRelease.finalizedBy(checkContent)
+
+/**
+ * Copy an app content to resources.
+ * */
+task copyContent () {
+    group 'content'
+    description 'Copy an app content to resources'
+    doFirst {
+        copy {
+            from CONTENT_PATH
+            into "beer/src/main/res/raw"
+        }
+    }
+}
+copyContent.dependsOn(checkContent)
+
+/**
+ * Update app content for release.
+ * */
+task updateContentForDebug () {
+    group 'content'
+    description 'Update app content for debug'
+    doFirst {
+        println("Update app content for debug...")
+    }
+}
+updateContentForDebug.dependsOn(makeContentForDebug)
+updateContentForDebug.finalizedBy(copyContent)
+
+/**
+ * Update app content for release.
+ * */
+task updateContentForRelease () {
+    group 'content'
+    description 'Update app content for release'
+    doFirst {
+        println("Update app content for release...")
+    }
+}
+updateContentForRelease.dependsOn(makeContentForRelease)
+updateContentForRelease.finalizedBy(copyContent)

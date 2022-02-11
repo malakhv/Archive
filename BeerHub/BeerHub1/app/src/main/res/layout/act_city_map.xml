@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Copyright (C) 2018 DevLear - All Rights Reserved.
+
+    This file is a part of BeerHub application.
+
+    Confidential and Proprietary.
+    Unauthorized copying of this file, via any medium is strictly prohibited.
+-->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Map -->
+    <FrameLayout
+        android:id="@+id/map_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <!-- The name of the current city -->
+    <TextView
+        android:id="@+id/city_name"
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:elevation="6dp"
+        android:textColor="?android:colorPrimaryDark"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_height="wrap_content" />
+
+    <!-- Map action: Show only favorite places -->
+    <ToggleButton
+        android:id="@+id/act_fav_only"
+        android:layout_marginTop="@dimen/map_controls_margin"
+        android:layout_marginStart="@dimen/map_controls_margin"
+        android:layout_width="@dimen/map_controls_size"
+        android:layout_height="@dimen/map_controls_size"
+        android:layout_alignParentStart="true"
+        android:elevation="8dp"
+        android:background="@drawable/ic_map_fav_only_bg"
+        android:textOff="" android:textOn="" />
+
+    <!-- Map action: Show list of places -->
+    <ImageButton
+        android:id="@+id/act_show_list"
+        android:layout_marginTop="@dimen/map_controls_margin"
+        android:layout_marginEnd="@dimen/map_controls_margin"
+        android:layout_alignParentEnd="true"
+        android:src="@drawable/ic_map_places"
+        android:elevation="8dp"
+        android:background="@drawable/map_controls_shape"
+        android:layout_width="@dimen/map_controls_size"
+        android:layout_height="@dimen/map_controls_size" />
+
+    <!-- Map additional actions -->
+    <LinearLayout
+        android:layout_alignParentEnd="true"
+        android:layout_width="wrap_content"
+        android:orientation="vertical"
+        android:elevation="0dp"
+        android:layout_centerVertical="true"
+        android:layout_height="wrap_content" >
+
+        <!-- Map action: Move to city center -->
+        <ImageButton
+            android:id="@+id/act_city_location"
+            android:src="@drawable/ic_map_loc_city"
+            android:elevation="8dp"
+            android:layout_margin="@dimen/map_controls_margin"
+            android:background="@drawable/map_controls_shape"
+            android:layout_width="@dimen/map_controls_size"
+            android:layout_height="@dimen/map_controls_size" />
+
+        <ImageButton
+            android:id="@+id/act_my_location"
+            android:src="@drawable/ic_map_loc_my"
+            android:elevation="8dp"
+            android:layout_marginEnd="@dimen/map_controls_margin"
+            android:layout_marginBottom="@dimen/map_controls_margin"
+            android:layout_marginStart="@dimen/map_controls_margin"
+            android:background="@drawable/map_controls_shape"
+            android:layout_width="@dimen/map_controls_size"
+            android:layout_height="@dimen/map_controls_size" />
+
+    </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/act_compass"
+        android:src="@drawable/ic_map_compass"
+        android:elevation="8dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="@dimen/map_controls_margin"
+        android:layout_marginBottom="@dimen/map_controls_margin"
+        android:layout_marginStart="@dimen/map_controls_margin"
+        android:background="@drawable/map_controls_shape"
+        android:layout_width="@dimen/map_controls_size"
+        android:layout_height="@dimen/map_controls_size"
+        android:visibility="gone" />
+
+    <com.devlear.app.beerhub.widget.PoiCard
+        android:id="@+id/place_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/map_padding_start"
+        android:layout_marginEnd="@dimen/map_padding_start"
+        android:layout_marginTop="@dimen/map_padding_top"
+        android:layout_marginBottom="@dimen/map_padding_top"
+        android:elevation="8dp"
+        android:background="@drawable/view_poi_card"
+        android:layout_alignParentBottom="true"
+        android:visibility="gone" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/place_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="@dimen/map_padding_start"
+        android:layout_marginEnd="@dimen/map_padding_start"
+        android:layout_marginTop="@dimen/map_padding_top"
+        android:layout_marginBottom="@dimen/map_padding_top"
+        android:elevation="8dp"
+        android:visibility="gone"
+        android:background="@drawable/view_poi_card" />
+
+</RelativeLayout>

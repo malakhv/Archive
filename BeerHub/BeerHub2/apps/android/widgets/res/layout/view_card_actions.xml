@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Copyright (C) 2018 DevLear - All Rights Reserved.
+
+    This file is a part of BeerHub project.
+
+    Confidential and Proprietary.
+    Unauthorized copying of this file, via any medium is strictly prohibited.
+-->
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <!-- Favorite -->
+    <ImageButton
+        android:id="@id/card_actions_fav"
+        android:text="@string/card_actions_fav"
+        android:src="@drawable/ic_act_fav_off"
+        android:layout_width="0dp"
+        android:layout_weight="0.2"
+        android:layout_height="wrap_content"
+        style="?android:attr/buttonBarButtonStyle"
+        android:contentDescription="@string/card_actions_fav" />
+
+    <!-- Web -->
+    <ImageButton
+        android:id="@id/card_actions_web"
+        android:text="@string/card_actions_web"
+        android:src="@drawable/ic_act_web"
+        android:layout_width="0dp"
+        android:layout_weight="0.2"
+        android:layout_height="wrap_content"
+        style="?android:attr/buttonBarButtonStyle"
+        android:contentDescription="@string/card_actions_web" />
+
+    <!-- Map -->
+    <ImageButton
+        android:id="@id/card_actions_map"
+        android:text="@string/card_actions_map"
+        android:src="@drawable/ic_act_map"
+        android:layout_width="0dp"
+        android:layout_weight="0.2"
+        android:layout_height="wrap_content"
+        style="?android:attr/buttonBarButtonStyle"
+        android:contentDescription="@string/card_actions_map" />
+
+    <!-- Call -->
+    <ImageButton
+        android:id="@id/card_actions_call"
+        android:text="@string/card_actions_share"
+        android:src="@drawable/ic_act_call"
+        android:layout_width="0dp"
+        android:layout_weight="0.2"
+        android:layout_height="wrap_content"
+        style="?android:attr/buttonBarButtonStyle"
+        android:contentDescription="@string/card_actions_call" />
+
+    <!-- Share -->
+    <ImageButton
+        android:id="@id/card_actions_share"
+        android:text="@string/card_actions_share"
+        android:src="@drawable/ic_act_share"
+        android:layout_width="0dp"
+        android:layout_weight="0.2"
+        android:layout_height="wrap_content"
+        style="?android:attr/buttonBarButtonStyle"
+        android:contentDescription="@string/card_actions_share" />
+
+</merge>

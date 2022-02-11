@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@android:id/background"
+        android:drawable="@drawable/map_controls_shape" />
+
+    <item android:id="@android:id/toggle" android:gravity="center"
+        android:drawable="@drawable/ic_map_fav_only_states" />
+
+</layer-list>
