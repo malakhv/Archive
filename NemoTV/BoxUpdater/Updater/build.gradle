@@ -1,0 +1,125 @@
+ext {
+    packageNameStr = "tv.nemo.box.updater"
+    versionMap = getVersion(packageNameStr)
+}
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath gradlePluginVersion
+    }
+}
+
+apply plugin: 'com.android.application'
+
+apply from: '../../sign.gradle'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile supportVersion
+    compile project(':CommonLibs')
+}
+
+android {
+    compileSdkVersion projectCompileSdkVersion
+    buildToolsVersion toolsVersion
+
+    defaultConfig {
+        applicationId packageNameStr
+        versionCode	versionMap['versionCode']
+        versionName versionMap['version']
+        minSdkVersion projectCompileSdkVersion
+        targetSdkVersion projectCompileSdkVersion
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+
+    buildTypes {
+        release {
+            signingConfig signingConfigs.releaseConf
+        }
+
+        demo {
+            debuggable true
+            zipAlign false
+            signingConfig signingConfigs.demoConf
+        }
+
+        debug {
+            debuggable true
+            signingConfig signingConfigs.debugConf
+        }
+
+        test {
+            debuggable true
+            signingConfig signingConfigs.testConf
+        }
+
+    }
+
+    sourceSets {
+        main {
+            setRoot('configs/main')
+            java.srcDirs = ['configs/main/src']
+            resources.srcDirs = ['configs/main/src']
+            aidl.srcDirs = ['configs/main/src']
+            renderscript.srcDirs = ['configs/main/src']
+            jni.srcDirs = ['configs/main/jni']
+            manifest.srcFile 'configs/main/AndroidManifest.xml'
+        }
+
+        androidTest {
+            setRoot('configs/androidTest')
+            java.srcDirs = ['configs/androidTest/src']
+            resources.srcDirs = ['configs/androidTest/src']
+            aidl.srcDirs = ['configs/androidTest/src']
+            renderscript.srcDirs = ['configs/androidTest/src']
+            jni.srcDirs = ['configs/androidTest/jni']
+
+        }
+
+        debug {
+            setRoot('configs/debug')
+            java.srcDirs = ['configs/debug/src']
+            resources.srcDirs = ['configs/debug/src']
+            aidl.srcDirs = ['configs/debug/src']
+            renderscript.srcDirs = ['configs/debug/src']
+            jni.srcDirs = ['configs/debug/jni']
+        }
+
+        demo {
+            setRoot('configs/demo')
+            java.srcDirs = ['configs/demo/src']
+            resources.srcDirs = ['configs/demo/src']
+            aidl.srcDirs = ['configs/demo/src']
+            renderscript.srcDirs = ['configs/demo/src']
+            jni.srcDirs = ['configs/demo/jni']
+        }
+
+        release {
+            setRoot('configs/release')
+            java.srcDirs = ['configs/release/src']
+            resources.srcDirs = ['configs/release/src']
+            aidl.srcDirs = ['configs/release/src']
+            renderscript.srcDirs = ['configs/release/src']
+            jni.srcDirs = ['configs/release/jni']
+        }
+
+        test {
+            setRoot('configs/test')
+            java.srcDirs = ['configs/test/src']
+            resources.srcDirs = ['configs/test/src']
+            aidl.srcDirs = ['configs/test/src']
+            renderscript.srcDirs = ['configs/test/src']
+            jni.srcDirs = ['configs/test/jni']
+        }
+    }
+
+}

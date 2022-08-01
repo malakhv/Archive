@@ -1,0 +1,110 @@
+def buildProperties = getBuildProperties();
+if (buildProperties == null) {
+    ext {
+        projectMinSdkVersion = 11
+        projectCompileSdkVersion = 17
+        toolsVersion = '19.0.3'
+        gradlePluginVersion = 'com.android.tools.build:gradle:0.9.+'
+        supportVersion = 'com.android.support:support-v4:19.1.+'
+        appCompatVersion = 'com.android.support:appcompat-v7:19.1.+'
+        googleServicesVersion = 'com.google.android.gms:play-services:4.4.52'
+    }
+} else {
+    ext {
+        projectMinSdkVersion = 17
+        projectCompileSdkVersion = 17
+        toolsVersion = buildProperties.getProperty("tools.version")
+        gradlePluginVersion = buildProperties.getProperty("gradle.plugin.version")
+        supportVersion = buildProperties.getProperty("support.version")
+        appCompatVersion = buildProperties.getProperty("app.compat.version")
+        googleServicesVersion = buildProperties.getProperty("google.services.version")
+    }
+}
+
+task autoclean(type: Delete) {
+    delete 'build'
+}
+task autobuild << {
+    project.subprojects.each {
+        subproject -> copy {
+                    from subproject.name + '/build/outputs/apk/'
+                    into 'build'
+                    include '*-debug-unaligned.apk'
+                    include '*-test-unaligned.apk'
+                    include '*-demo-unaligned.apk'
+                    include '*-release.apk'
+
+                    rename '(.*)-unaligned(.*)', '$1$2'
+                }
+    }
+
+    project.subprojects.each {
+        subproject -> new File(subproject.name + '/build/proguard/').listFiles()?.each {
+            config -> copy {
+                from "" + config + "/"
+                into 'build'
+                include 'mapping.txt'
+
+                rename 'mapping.txt', subproject.name + '-' + config.name + '.pgm'
+            }
+        }
+    }
+}
+autobuild.dependsOn ':Updater:build'
+
+def getBuildProperties() {
+    Properties result = new Properties()
+
+    InputStream input
+    try {
+        input = new FileInputStream(rootDir.absolutePath + File.separator + ".." + File.separator + "android.properties")
+        result.load(input)
+        input.close();
+    } catch (IOException e) {
+        return null;
+    } finally {
+        if (input != null) {
+            input.close()
+        }
+    }
+    return result;
+}
+
+def getVersion(String appId) {
+    int port = 443
+    String host = "localstore.nemotele.com"
+    String scheme = "https"
+    String path = ""
+
+    if (appId.length() == 0) {
+        return [version:"0.1", versionCode:1]
+    }
+
+    try {
+        def url = new URL(scheme + "://" + host+ ":" + port+ "/" + path + "api/apps/get_version.json")
+        def connection = url.openConnection()
+        connection.setRequestMethod("POST")
+        connection.addRequestProperty("Content-Type", "application/json")
+        connection.doOutput = true
+
+        def writer = new OutputStreamWriter(connection.outputStream)
+        writer.write(groovy.json.JsonOutput.toJson([
+                app_id : appId,
+                platform : 'android_box'
+        ]).toString())
+        writer.flush()
+        writer.close()
+        connection.connect()
+
+        def result = new groovy.json.JsonSlurper().parseText(connection.content.text);
+        if (result.status != "ok") {
+            return [version:"0.1", versionCode:1]
+        } else {
+            return [version:result.result.version, versionCode:result.result.version_code];
+        }
+    } catch (ConnectException ex) {
+        return [version:"0.1", versionCode:1]
+    } catch (IOException ex) {
+        return [version:"0.1", versionCode:1]
+    }
+}

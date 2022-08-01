@@ -1,0 +1,60 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath gradlePluginVersion
+    }
+}
+
+apply plugin: 'com.android.library'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile supportVersion
+}
+
+android {
+    compileSdkVersion projectCompileSdkVersion
+    buildToolsVersion toolsVersion
+
+    defaultConfig {
+        minSdkVersion 7
+        targetSdkVersion 16
+    }
+
+    sourceSets {
+        main {
+            setRoot('configs/main')
+            java.srcDirs = ['configs/main/src']
+            resources.srcDirs = ['configs/main/src']
+            aidl.srcDirs = ['configs/main/src']
+            renderscript.srcDirs = ['configs/main/src']
+            jni.srcDirs = ['configs/main/jni']
+            manifest.srcFile 'configs/main/AndroidManifest.xml'
+        }
+
+        debug {
+            setRoot('configs/debug')
+            java.srcDirs = ['configs/debug/src']
+            resources.srcDirs = ['configs/debug/src']
+            aidl.srcDirs = ['configs/debug/src']
+            renderscript.srcDirs = ['configs/debug/src']
+            jni.srcDirs = ['configs/debug/jni']
+        }
+
+        androidTest {
+            setRoot('configs/androidTest')
+            java.srcDirs = ['configs/androidTest/src']
+            resources.srcDirs = ['configs/androidTest/src']
+            aidl.srcDirs = ['configs/androidTest/src']
+            renderscript.srcDirs = ['configs/androidTest/src']
+            jni.srcDirs = ['configs/androidTest/jni']
+
+        }
+    }
+
+}

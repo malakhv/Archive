@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<level-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item>
+        <shape
+            android:shape="ring"
+            android:innerRadiusRatio="2.5"
+            android:thickness="18dp"
+            android:useLevel="false">
+            <solid android:color="#FF02161e" />
+        </shape>
+    </item>
+
+    <item>
+        <shape
+            android:shape="ring"
+            android:innerRadiusRatio="2.5"
+            android:thickness="1dp"
+            android:useLevel="false">
+            <solid android:color="#FF032b39" />
+        </shape>
+    </item>
+
+</level-list>

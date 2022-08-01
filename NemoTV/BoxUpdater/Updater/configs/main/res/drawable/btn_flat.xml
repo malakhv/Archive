@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--focused-->
+    <item android:state_selected="true" android:color="#ffff0000" >
+        <shape android:shape="rectangle">
+            <padding android:bottom="5dp" android:left="20dp" android:right="20dp" android:top="5dp" />
+            <stroke android:width="2dp" android:color="#FF084C5E" />
+            <solid android:color="#FF032B39" />
+            <corners android:radius="5dp" />
+        </shape>
+    </item>
+
+    <!--pressed-->
+    <item android:state_focused="true" android:state_pressed="true">
+        <shape android:shape="rectangle">
+            <padding android:bottom="5dp" android:left="20dp" android:right="20dp" android:top="5dp" />
+            <stroke android:width="2dp" android:color="#FF084C5E" />
+            <solid android:color="#FF054C66" />
+            <corners android:radius="5dp" />
+        </shape>
+    </item>
+
+    <!--focused-->
+    <item android:state_focused="true">
+        <shape android:shape="rectangle">
+            <padding android:bottom="5dp" android:left="20dp" android:right="20dp" android:top="5dp" />
+            <stroke android:width="2dp" android:color="#FF084C5E"/>
+            <solid android:color="#FF032B39" />
+            <corners android:radius="5dp" />
+        </shape>
+    </item>
+
+    <!--disabled-->
+    <item android:state_enabled="false">
+        <shape android:shape="rectangle">
+            <padding android:bottom="5dp" android:left="20dp" android:right="20dp" android:top="5dp" />
+            <stroke android:width="2dp" android:color="#BF032B39" />
+            <solid android:color="#BF031922" />
+            <corners android:radius="5dp" />
+        </shape>
+    </item>
+
+    <!--normal-->
+    <item>
+        <shape android:shape="rectangle">
+            <padding android:bottom="5dp" android:left="20dp" android:right="20dp" android:top="5dp" />
+            <stroke android:width="2dp" android:color="#FF032B39" />
+            <solid android:color="#031922" />
+            <corners android:radius="5dp" />
+        </shape>
+    </item>
+</selector>

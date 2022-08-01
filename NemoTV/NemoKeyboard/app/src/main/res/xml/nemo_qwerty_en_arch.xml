@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Keyboard xmlns:android="http://schemas.android.com/apk/res/android"
+    android:keyWidth="@dimen/key_size_1" android:horizontalGap="0dp" android:verticalGap="0dp"
+    android:keyHeight="@dimen/key_size_1" android:padding="0dp">
+
+    <Row>
+        <Key android:codes="49" android:keyLabel="1" android:keyEdgeFlags="left" />
+        <Key android:codes="50" android:keyLabel="2"/>
+        <Key android:codes="51" android:keyLabel="3"/>
+        <Key android:codes="52" android:keyLabel="4"/>
+        <Key android:codes="53" android:keyLabel="5"/>
+        <Key android:codes="54" android:keyLabel="6"/>
+        <Key android:codes="55" android:keyLabel="7"/>
+        <Key android:codes="56" android:keyLabel="8"/>
+        <Key android:codes="57" android:keyLabel="9"/>
+        <Key android:codes="48" android:keyLabel="0"/>
+        <Key android:codes="88800" android:keyIcon="@drawable/key_backspace_icon" android:keyWidth="@dimen/key_size_2" android:keyEdgeFlags="right"/>
+    </Row>
+
+    <Row>
+        <Key android:codes="88803" android:keyLabel="Eng" android:keyEdgeFlags="left" />
+        <Key android:codes="49" android:keyLabel="q"/>
+        <Key android:codes="50" android:keyLabel="w"/>
+        <Key android:codes="51" android:keyLabel="e"/>
+        <Key android:codes="52" android:keyLabel="r"/>
+        <Key android:codes="53" android:keyLabel="t"/>
+        <Key android:codes="54" android:keyLabel="y"/>
+        <Key android:codes="55" android:keyLabel="u"/>
+        <Key android:codes="56" android:keyLabel="i"/>
+        <Key android:codes="57" android:keyLabel="o"/>
+        <Key android:codes="48" android:keyLabel="p"/>
+        <Key android:codes="13" android:keyIcon="@drawable/key_enter_icon" android:keyHeight="@dimen/key_size_3" android:keyEdgeFlags="right"/>
+    </Row>
+
+    <Row>
+        <Key android:codes="88804" android:keyLabel="#+=" android:keyEdgeFlags="left" />
+        <Key android:codes="49" android:keyLabel="ф"  />
+        <Key android:codes="50" android:keyLabel="ы"/>
+        <Key android:codes="51" android:keyLabel="в"/>
+        <Key android:codes="430" android:keyLabel="а"/>
+        <Key android:codes="53" android:keyLabel="п"/>
+        <Key android:codes="54" android:keyLabel="р"/>
+        <Key android:codes="55" android:keyLabel="о"/>
+        <Key android:codes="56" android:keyLabel="л"/>
+        <Key android:codes="57" android:keyLabel="д"/>
+        <Key android:codes="48" android:keyLabel="ж" android:keyEdgeFlags="right"/>
+    </Row>
+
+    <Row>
+        <Key android:codes="88805" android:keyIcon="@drawable/key_shift_icon" android:keyEdgeFlags="left" />
+        <Key android:codes="49" android:keyLabel="я"  />
+        <Key android:codes="50" android:keyLabel="ч"/>
+        <Key android:codes="51" android:keyLabel="с"/>
+        <Key android:codes="52" android:keyLabel="м"/>
+        <Key android:codes="53" android:keyLabel="и"/>
+        <Key android:codes="54" android:keyLabel="т"/>
+        <Key android:codes="55" android:keyLabel="ь"/>
+        <Key android:codes="431" android:keyLabel="б"/>
+        <Key android:codes="57" android:keyLabel="ю"/>
+        <Key android:codes="48" android:keyLabel="э" android:keyEdgeFlags="right"/>
+    </Row>
+
+    <Row>
+        <Key android:codes="49" android:keyLabel="х" android:keyEdgeFlags="left" />
+        <Key android:codes="49" android:keyLabel="ъ"/>
+        <Key android:codes="32" android:keyLabel="Пробел" android:keyWidth="@dimen/key_size_7"/>
+        <Key android:codes="45" android:keyLabel="-" />
+        <Key android:codes="88801" android:keyIcon="@drawable/key_left_icon" />
+        <Key android:codes="88802" android:keyIcon="@drawable/key_right_icon" android:keyEdgeFlags="right"/>
+    </Row>
+
+</Keyboard>

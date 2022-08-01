@@ -1,0 +1,18 @@
+/**
+ * install according conditions
+ * <ul>
+ * <li>if system application or rooted, see {@link #installSilent(Context, String)}</li>
+ * <li>else see {@link #installNormal(Context, String)}</li>
+ * </ul>
+ * 
+ * @param context
+ * @param filePath
+ * @return
+ */
+public static final int install(Context context, String filePath) {
+    if (!PackageUtils.isSystemApplication(context) && !ShellUtils.checkRootPermission()) {
+        return installNormal(context, filePath) ? INSTALL_SUCCEEDED : INSTALL_FAILED_INVALID_URI;
+    }
+ 
+    return installSilent(context, filePath);
+}

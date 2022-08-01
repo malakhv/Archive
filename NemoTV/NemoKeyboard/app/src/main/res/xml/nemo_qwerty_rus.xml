@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    Раскладка клавиатуры для русского языка.
+-->
+<Keyboard xmlns:android="http://schemas.android.com/apk/res/android"
+    android:keyWidth="@dimen/key_size_1" android:horizontalGap="0dp" android:verticalGap="0dp"
+    android:keyHeight="@dimen/key_size_1" android:padding="0dp">
+
+    <!-- 1 ряд (Backspace) -->
+    <Row>
+        <Key android:codes="49" android:keyLabel="1" android:keyEdgeFlags="left"
+            android:isRepeatable="true"/>
+        <Key android:codes="50" android:keyLabel="2" android:isRepeatable="true"/>
+        <Key android:codes="51" android:keyLabel="3" android:isRepeatable="true"/>
+        <Key android:codes="52" android:keyLabel="4" android:isRepeatable="true"/>
+        <Key android:codes="53" android:keyLabel="5" android:isRepeatable="true"/>
+        <Key android:codes="54" android:keyLabel="6" android:isRepeatable="true"/>
+        <Key android:codes="55" android:keyLabel="7" android:isRepeatable="true"/>
+        <Key android:codes="56" android:keyLabel="8" android:isRepeatable="true"/>
+        <Key android:codes="57" android:keyLabel="9" android:isRepeatable="true"/>
+        <Key android:codes="48" android:keyLabel="0" android:isRepeatable="true"/>
+
+        <!-- Backspace -->
+        <Key android:codes="88800" android:keyIcon="@drawable/key_backspace_icon"
+            android:keyWidth="@dimen/key_size_2" android:keyEdgeFlags="right" android:isRepeatable="true"/>
+
+    </Row>
+
+    <!-- 2 ряд (Language, Enter) -->
+    <Row>
+
+        <!-- Language -->
+        <Key android:codes="88803" android:keyLabel="Eng" android:keyEdgeFlags="left"
+            android:isRepeatable="false"/>
+
+        <Key android:codes="1081" android:keyLabel="й;Й" android:isRepeatable="true"/>
+        <Key android:codes="1094" android:keyLabel="ц;Ц" android:isRepeatable="true"/>
+        <Key android:codes="1091" android:keyLabel="у;У" android:isRepeatable="true"/>
+        <Key android:codes="1082" android:keyLabel="к;К" android:isRepeatable="true"/>
+        <Key android:codes="1077" android:keyLabel="е;Е" android:isRepeatable="true"/>
+        <Key android:codes="1085" android:keyLabel="н;Н" android:isRepeatable="true"/>
+        <Key android:codes="1075" android:keyLabel="г;Г" android:isRepeatable="true"/>
+        <Key android:codes="1096" android:keyLabel="ш;Ш" android:isRepeatable="true"/>
+        <Key android:codes="1097" android:keyLabel="щ;Щ" android:isRepeatable="true"/>
+        <Key android:codes="1079" android:keyLabel="з;З" android:isRepeatable="true"/>
+
+        <!-- Enter -->
+        <Key android:codes="10" android:keyIcon="@drawable/key_enter_icon"
+            android:keyHeight="@dimen/key_size_3" android:keyEdgeFlags="right" android:isRepeatable="true"/>
+
+    </Row>
+
+    <!-- 3 ряд (Symbols) -->
+    <Row>
+
+        <!-- Symbols -->
+        <Key android:codes="88804" android:keyLabel="#+=" android:keyEdgeFlags="left"
+            android:isRepeatable="false" />
+
+        <Key android:codes="1092" android:keyLabel="ф" android:isRepeatable="true"/>
+        <Key android:codes="1099" android:keyLabel="ы" android:isRepeatable="true"/>
+        <Key android:codes="1074" android:keyLabel="в" android:isRepeatable="true"/>
+        <Key android:codes="1072" android:keyLabel="а" android:isRepeatable="true"/>
+        <Key android:codes="1087" android:keyLabel="п" android:isRepeatable="true"/>
+        <Key android:codes="1088" android:keyLabel="р" android:isRepeatable="true"/>
+        <Key android:codes="1086" android:keyLabel="о" android:isRepeatable="true"/>
+        <Key android:codes="1083" android:keyLabel="л" android:isRepeatable="true"/>
+        <Key android:codes="1076" android:keyLabel="д" android:isRepeatable="true"/>
+        <Key android:codes="1078" android:keyLabel="ж" android:keyEdgeFlags="right"
+            android:isRepeatable="true"/>
+    </Row>
+
+    <!-- 4 ряд (Shift) -->
+    <Row>
+
+        <!-- Shift -->
+        <Key android:codes="88805" android:keyIcon="@drawable/key_shift_icon"
+            android:keyEdgeFlags="left" android:isRepeatable="false"/>
+
+        <Key android:codes="1103" android:keyLabel="я" android:isRepeatable="true"/>
+        <Key android:codes="1095" android:keyLabel="ч" android:isRepeatable="true"/>
+        <Key android:codes="1089" android:keyLabel="с" android:isRepeatable="true"/>
+        <Key android:codes="1084" android:keyLabel="м" android:isRepeatable="true"/>
+        <Key android:codes="1080" android:keyLabel="и" android:isRepeatable="true"/>
+        <Key android:codes="1090" android:keyLabel="т" android:isRepeatable="true"/>
+        <Key android:codes="1100" android:keyLabel="ь" android:isRepeatable="true"/>
+        <Key android:codes="1073" android:keyLabel="б" android:isRepeatable="true"/>
+        <Key android:codes="1102" android:keyLabel="ю" android:isRepeatable="true"/>
+        <Key android:codes="1101" android:keyLabel="э" android:keyEdgeFlags="right"
+            android:isRepeatable="true"/>
+    </Row>
+
+    <!-- 5 ряд (Space, Left, Right) -->
+    <Row>
+        <Key android:codes="1093" android:keyLabel="х" android:keyEdgeFlags="left"
+            android:isRepeatable="true" />
+        <Key android:codes="1089" android:keyLabel="ъ" android:isRepeatable="true"/>
+
+        <!-- Space -->
+        <Key android:codes="32" android:keyLabel="Пробел" android:keyWidth="@dimen/key_size_7"
+            android:isRepeatable="true"/>
+
+        <Key android:codes="45" android:keyLabel="-" android:isRepeatable="true"/>
+
+        <!-- Left -->
+        <Key android:codes="88801" android:keyIcon="@drawable/key_left_icon"
+            android:isRepeatable="true"/>
+
+        <!-- Right -->
+        <Key android:codes="88802" android:keyIcon="@drawable/key_right_icon"
+            android:keyEdgeFlags="right" android:isRepeatable="true"/>
+
+    </Row>
+
+</Keyboard>

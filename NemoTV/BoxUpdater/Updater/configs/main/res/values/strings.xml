@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Цвет текста -->
+        <!--
+            <color name="text_color">#FF919191</color> - release
+            <color name="text_color">#FFAACC00</color> - debug
+        -->
+    <color name="text_color">#FF919191</color>
+
+    <!-- Отступы -->
+    <dimen name="padding">18dp</dimen>
+
+    <!-- Надписи на кнопках -->
+    <string name="btn_update_text">Обновить</string>
+    <string name="btn_cancel_text_cancel">Отмена</string>
+    <string name="btn_cancel_text_close">Закрыть</string>
+    <string name="btn_cancel_text_abort">Прервать</string>
+
+    <!-- Различные заголовки окна -->
+    <string name="title_update_check">Проверка обновлений</string>
+    <string name="title_update_exists">Доступно новое ПО</string>
+    <string name="title_update_done">Обновление завершено</string>
+
+    <!-- Возможные состояния Activity (ActState) -->
+
+        <!-- Проверка активации устройства (ACT_CHECK) -->
+        <string name="state_act_check_msg">Проверка активации устройства.</string>
+
+        <!-- Устройство не было активировано (ACT_ERROR) -->
+        <string name="state_act_error_msg">Устройство не было активировано.\n\nУстройство с серийным номером %1s должно быть зарегистрировано в системе администрирования.</string>
+
+        <!-- Нет сетевого соединения (CON_ERROR) -->
+        <string name="state_con_error_msg">Нет доступа к сети.\n\nПожалуйста, проверьте подключение к интернету и повторите попытку.</string>
+
+        <!-- Сервер обновления не доступен (SRV_ERROR) -->
+        <string name="state_srv_error_msg">Сервер обновлений временно не доступен.\n\nПожалуйста, повторите попытку позже.</string>
+
+        <!-- Проверка наличия обновлений (UPD_CHECK) -->
+        <!-- <string name="state_upd_check_msg">Проверка обновлений занимает какое-то время,\nпожалуйста, дождитесь завершения.</string> -->
+        <string name="state_upd_check_msg">Проверка наличия обновлений.\n\nЭтот процесс занимает какое-то время, пожалуйста, дождитесь завершения.</string>
+
+        <!-- Обновления найдены (UPD_EXISTS) -->
+        <!-- <string name="state_upd_exists_msg">Шаг 1. Сейчас обновится:</string> -->
+        <string name="state_upd_exists_msg">Список доступных обновлений:</string>
+
+        <!-- Обновления не найдены (UPD_NOT_EXISTS) -->
+        <string name="state_upd_no_exists_msg">Нет доступных обновлений!\n\nНа устройстве установлена последняя версия программного обеспечения.</string>
+
+        <!-- Обновления загружаются (UPD_DOWNLOAD) -->
+        <!-- <string name="state_upd_updating_msg">Идет загрузка обновлений.\nЭтот процесс может занять несколько минут.</string> -->
+        <string name="state_upd_updating_msg">Идет загрузка обновлений.\n\nЭтот процесс занимает какое-то время, пожалуйста, дождитесь завершения.</string>
+
+        <!-- Пользователь прервал загрузку обновлений (UPD_ABORT) -->
+        <string name="state_upd_abort_msg">Загрузка обновлений прервана пользователем.\n\nДля повторной загрузки обновлений, пожалуйста, перезапустите приложение. </string>
+
+        <!-- Обновления устанавливаются -->
+        <string name="state_upd_install_msg">Обновления устанавливаются.\n\nЭтот процесс занимает какое-то время, пожалуйста, дождитесь завершения.\n\nПожалуйста не выключайте устройство!</string>
+
+        <!-- Процедура обновления успешно завершена (UPD_DONE) -->
+        <string name="state_upd_done_msg">Обновления были успешно установлены!</string>
+
+    <!-- End block -->
+
+    <!-- Список приложений, для которых есть обновления -->
+
+        <!-- Отступ внутри элементов -->
+        <dimen name="list_item_padding">6dp</dimen>
+
+        <!-- Размер текста в списке -->
+        <dimen name="list_item_text_size">13sp</dimen>
+
+    <!-- End block -->
+
+</resources>

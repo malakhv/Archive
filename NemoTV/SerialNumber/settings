@@ -1,0 +1,13 @@
+<string name="status_bt_address" msgid="4195174192087439720">"Адрес Bluetooth"</string>
+<string name="status_serial_number" msgid="2257111183374628137">"Серийный номер"</string>
+
+
+ <!-- About phone, status item title.  The hardware serial number. [CHAR LIMIT=30]-->
+ <string name="status_serial_number">Serial number</string>
+
+ #device_info_status
+ <Preference android:key="serial_number"
+style="?android:attr/preferenceInformationStyle"
+android:title="@string/status_serial_number"
+android:summary="@string/device_info_not_available"
+android:persistent="false" />

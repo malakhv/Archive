@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Название метода ввода -->
+    <string name="nemo_input_label">Nemo Box Keyboard</string>
+
+    <string name="label_subtype_generic">%s</string>
+
+    <dimen name="key_height">120dip</dimen>
+
+    <!-- Размер клавиши (x) -->
+    <dimen name="key_size_1">75dp</dimen>
+
+    <!-- Размер клавиши (x*2) -->
+    <dimen name="key_size_2">150dp</dimen>
+
+    <!-- Размер клавиши (x*3) -->
+    <dimen name="key_size_3">225dp</dimen>
+
+    <!-- Размер клавиши (x*4) -->
+    <dimen name="key_size_4">300dp</dimen>
+
+    <!-- Размер клавиши (x*7) -->
+    <dimen name="key_size_7">525dp</dimen>
+
+    <dimen name="candidate_font_height">16sp</dimen>
+    <dimen name="candidate_vertical_padding">6sp</dimen>
+
+    <color name="keyboard_bg">#FF021822</color>
+
+</resources>

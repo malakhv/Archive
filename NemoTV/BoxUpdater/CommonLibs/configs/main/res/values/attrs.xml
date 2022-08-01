@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="gravity">
+        <enum name="top" value="0" />
+        <enum name="center" value="1" />
+        <enum name="bottom" value="2" />
+    </attr>
+    <attr name="separatorSize" format="dimension"/>
+
+    <declare-styleable name="HorizontalCycleLayersView">
+        <attr name="mainLayer" format="integer" />
+        <attr name="centerScale" format="float" />
+        <attr name="gravity" />
+    </declare-styleable>
+    <declare-styleable name="CreepingLine">
+        <attr name="speed" format="dimension" />
+    </declare-styleable>
+    <declare-styleable name="SlideView">
+        <attr name="sideOffset" format="dimension">
+            <enum name="fill_parent" value="-1" />
+        </attr>
+        <attr name="direction" format="enum">
+            <enum name="top" value="1" />
+            <enum name="bottom" value="2" />
+            <enum name="left" value="3" />
+            <enum name="right" value="4" />
+        </attr>
+        <attr name="allowManualOpen" format="boolean" />
+    </declare-styleable>
+    <declare-styleable name="MirrorSlidingDrawer">
+        <attr name="handleId" format="reference" />
+        <attr name="contentId" format="reference" />
+        <attr name="orientation" format="enum">
+            <enum name="horizontal" value="0" />
+            <enum name="vertical" value="1" />
+        </attr>
+    </declare-styleable>
+    <declare-styleable name="OwerlayImageView">
+        <attr name="owerlay" format="reference" />
+    </declare-styleable>
+    <declare-styleable name="ExpandableHorizontalListView">
+        <attr name="outAnimation" format="reference" />
+        <attr name="inAnimation" format="reference" />
+        <attr name="closeOutAnimation" format="reference" />
+        <attr name="closeInAnimation" format="reference" />
+        <attr name="openOutAnimation" format="reference" />
+        <attr name="openInAnimation" format="reference" />
+        <attr name="gravity" />
+        <attr name="animationGravity">
+            <enum name="left" value="0" />
+            <enum name="center" value="1" />
+            <enum name="right" value="2" />
+        </attr>
+        <!--TODO не поддержаные пока что атрибуты-->
+        <attr name="preLoader" format="reference" />
+        <attr name="preLoaderEnabled" format="boolean" />
+        <attr name="postLoader" format="reference" />
+        <attr name="postLoaderEnabled" format="boolean" />
+    </declare-styleable>
+    <declare-styleable name="TextureTextView">
+        <attr name="font_ttf" format="string" />
+        <attr name="texture" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="FloatingFocusAdapterView">
+        <attr name="selector" format="reference"/>
+        <attr name="headerLoaderEnabled" format="boolean"/>
+        <attr name="footerLoaderEnabled" format="boolean"/>
+        <attr name="headerLoader" format="reference"/>
+        <attr name="footerLoader" format="reference"/>
+    </declare-styleable>
+
+    <declare-styleable name="HorizontalFloatingListView">
+        <attr name="gravity"/>
+        <attr name="separatorSize"/>
+    </declare-styleable>
+    <declare-styleable name="HorizontalPageFloatingFocusListView">
+        <attr name="gravity"/>
+        <attr name="separatorSize"/>
+    </declare-styleable>
+    <declare-styleable name="VerticalFloatingListView">
+        <attr name="gravity"/>
+        <attr name="separatorSize"/>
+    </declare-styleable>
+</resources>

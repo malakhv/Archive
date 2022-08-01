@@ -1,0 +1,34 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="tv.nemo.box.updater"
+    android:versionCode="1"
+    android:versionName="1.0">
+
+    <!-- Разрешения для установки и удаления приложений -->
+    <uses-permission android:name="android.permission.INSTALL_PACKAGES"/>
+    <uses-permission android:name="android.permission.DELETE_PACKAGES"/>
+
+    <!--
+        android:sharedUserId="android.uid.system"
+        android:protectionLevel="signatureOrSystem"
+    -->
+
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:label="NemoUpdater"
+        android:allowBackup="false"
+        android:theme="@style/updateActivity">
+        <meta-data android:name="tv.nemo.box.config" android:resource="@string/meta_config_name" />
+        <activity android:name=".ActMain" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+
+    </application>
+</manifest>

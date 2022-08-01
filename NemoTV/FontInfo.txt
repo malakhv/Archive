@@ -1,0 +1,26 @@
+Font families
+
+Android 4.1 adds several more variants of the Roboto font style for a total of 10 variants, and they're all usable by apps. Your apps now have access to the full set of both light and condensed variants.
+
+The complete set of Roboto font variants available is:
+
+Regular
+Italic
+Bold
+Bold-italic
+Light
+Light-italic
+Condensed regular
+Condensed italic
+Condensed bold
+Condensed bold-italic
+You can apply any one of these with the new fontFamily attribute in combination with the textStyle attribute.
+
+Supported values for fontFamily are:
+
+"sans-serif" for regular Roboto
+"sans-serif-light" for Roboto Light
+"sans-serif-condensed" for Roboto Condensed
+You can then apply bold and/or italic with textStyle values "bold" and "italic". You can apply both like so: android:textStyle="bold|italic".
+
+You can also use Typeface.create(). For example, Typeface.create("sans-serif-light", Typeface.NORMAL).
