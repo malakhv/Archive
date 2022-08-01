@@ -1,0 +1,251 @@
+<html>
+<head>
+	<title>global_index / no refresh</title>
+	<meta http-equiv="content-type" content="text/html; charset=windows-1251">
+	<meta http-equiv="pragma" content="no-cache">
+	<meta http-equiv="refresh" content="60; URL=./index.html">
+</head>
+
+<script src="./advert.js"></script>
+<script src="./advert_content.js"></script>
+<script src="./func/ui/objects.js"></script>
+<script src="./func/engine/pars_cookie.js"></script>
+<script src="./func/engine/extra_prv.js"></script>
+<script src="./prv_values.js"></script>
+<script src="./sort.js"></script>
+<script src="./config.js"></script>
+
+<script>
+
+var prv_value = getcookie('prv_value');
+var phone_number = getcookie('Phone_Number');
+
+function IsAbrBase()
+{
+  var ts = getcookie('prv_alert');
+  ts = ts.toLowerCase(ts);
+  return (ts.lastIndexOf('абрикос') > 0) && (ts.lastIndexOf('базовый') > 0);
+}
+
+function IsAbrSocp()
+{
+  var ts = getcookie('prv_alert');
+  ts = ts.toLowerCase(ts);
+  return (ts.lastIndexOf('абрикос') > 0) && (ts.lastIndexOf('социальный') > 0);
+}
+
+function IsAbricos()
+{
+  var ts = getcookie('prv_alert');
+  ts = ts.toLowerCase(ts);
+  return ts.lastIndexOf('абрикос') > 0;
+}
+
+function IsAbrRe()
+{
+  var ts = getcookie('prv_alert');
+  ts = ts.toLowerCase(ts);
+  return (ts.lastIndexOf('абрикос') > 0) && (ts.lastIndexOf('переподключение') > 0);
+}
+
+function IsSMS()
+{
+  var ts = getcookie('prv_alert');
+  ts = ts.toLowerCase(ts);
+  return (ts.lastIndexOf('смс') > 0) && (ts.lastIndexOf('дневник') > 0) && (ts.lastIndexOf('камышин') > 0);
+}
+
+function IsTrader()
+{
+  var ts = getcookie('prv_alert');
+  ts = ts.toLowerCase(ts);
+  return (ts.lastIndexOf('торговый') > 0) && (ts.lastIndexOf('дом') > 0) && (ts.lastIndexOf('камышина') > 0);
+}
+
+function validate_confirm() 
+{
+	addExtraPrvToValues();
+	ff.phoneNumber.value = phone_number;
+	var al = value[prv_value]["prv_alert"];
+	if (al != '') {
+        	document.getElementById('alert').innerHTML = al;
+	}
+	else {
+        	document.getElementById('alert').innerHTML = '';		
+	}
+  var phone = phone_number;
+
+
+  if(IsAbricos() || IsTrader())
+  {
+    var pin_ok = true;
+    var pin_str;
+    var gen_str;
+
+    // Получение и генерация пинкода для абрикоса
+    if(IsAbricos())
+    {
+      pin_str = phone.charAt(7) + phone.charAt(8) + phone.charAt(9) + phone.charAt(10);
+      gen_str = String((Number(phone.charAt(0)) + Number(phone.charAt(5))) % 10) +
+        String((Number(phone.charAt(1)) + Number(phone.charAt(4))) % 10) +
+        String((Number(phone.charAt(2)) + Number(phone.charAt(3))) % 10) +
+        String((Number(phone.charAt(0)) + Number(phone.charAt(1)) + Number(phone.charAt(2)) + Number(phone.charAt(3)) + Number(phone.charAt(4)) + Number(phone.charAt(5))) % 10);
+    }
+    // Получение и генерация пинкода для торгового дома
+    if(IsTrader())
+    {
+      pin_str = phone.charAt(9) + phone.charAt(10) + phone.charAt(11) + phone.charAt(12);
+      gen_str = String((Number(phone.charAt(0)) + Number(phone.charAt(7))) % 10) +
+        String((Number(phone.charAt(1)) + Number(phone.charAt(6))) % 10) +
+        String((Number(phone.charAt(2)) + Number(phone.charAt(5))) % 10) +
+        String((Number(phone.charAt(3)) + Number(phone.charAt(4))) % 10);
+    }
+    // Проверка пинкода
+    pin_ok = Number(pin_str) == Number(gen_str);
+    if(IsAbrBase() && pin_ok)
+      document.getElementById('alert').innerHTML = '<div style="position: absolute;  width: 100%;  align: center; text-align: center;" ><p align="center"><font size="5" color="red">Уважаемые абненты!<br>С 1 октября 2009г. изменена стоимость Базового пакета.<br>Оплата через терминалы ЗА ОКТЯБРЬ составит 280 рублей, из которых 10 рублей - вознаграждение владельца терминала.<br>Если вы согласны с данными условиями, нажмите "ВПЕРЕД"</font></p></div>';
+    if(IsAbrSocp() && pin_ok)
+      document.getElementById('alert').innerHTML = '<div style="position: absolute;  width: 100%;  align: center; text-align: center;" ><p align="center"><font size="5" color="red">Уважаемые абненты!<br>С 1 октября 2009г. изменена стоимость Социального пакета.<br>Оплата через терминалы ЗА ОКТЯБРЬ составит 120 рублей, из которых 10 рублей - вознаграждение владельца терминала.<br>Если вы согласны с данными условиями, нажмите "ВПЕРЕД"</font></p></div>';
+
+    if(IsAbrRe() && pin_ok)
+      document.getElementById('alert').innerHTML = '<div style="position: absolute;  width: 100%;  align: center; text-align: center;" ><p align="center"><font size="5" color="red">Уважаемые абненты!<br>Стоимость переподключения к СКТВ "Абрикос" через терминалы составляет 60 рублей<br>из которых 10 рублей - вознаграждение владельца терминала.<br>Если вы согласны с данными условиями, нажмите "ВПЕРЕД"</font></p></div>';
+
+    if(!pin_ok)
+    {
+      document.getElementById('alert').innerHTML = '<div style="position: absolute;  width: 100%;  align: center; text-align: center;" ><font size="5" color="red">Внимание!<br>Введён неверный номер лицевого счёта или ПИН-код.<br>Нажмите "НАЗАД" и повторите попытку.<br>Уточнить свой номер лицевого счёта и ПИН-код можно по телефону: 8-927-501-03-11</font></div>';
+      forward_yes.style.display='none';
+    }
+  }
+  
+  if(IsSMS())
+  {
+    document.getElementById('alert').innerHTML = '<div style="position: absolute;  width: 100%;  align: center; text-align: center;" ><p align="center"><font size="4" color="red">Внимание!!!<br>Оплата услуги "СМС-Дневник" составляет 100 рублей в месяц.<br>Комиссия терминала по данному провайдеру составляет 0%.<br>Суммы менее 100 рублей к оплате не принимаются и возврату не подлежат.<br>Если вы согласны с данными условиями, нажмите "ВПЕРЕД"</font></p></div>';
+  }
+}
+
+function prv_info()
+{
+	document.getElementById("provider_image").innerHTML = 
+	'<table width=100% height=100% cellpadding="0" cellspacing="0" border="0">'+
+	'<tr>'+
+	'<td align="center" valign="middle">'+
+	'<img src='+value[prv_value]["prv_image"]+' height=100></img><br>'+
+	'<font weight=bold>'+value[prv_value]["prv_name"]+'</font></td>'+
+	'</tr>'+
+	'</table>';
+}
+
+
+</script>
+
+<script>
+
+function backward() {
+	var last_page = getcookie('last_page');
+	parent.location = last_page;
+}
+
+
+function forward() {
+  ff.submit();
+}
+
+function menu() {
+	parent.location = "./main.html";
+}
+
+function bdef(){
+	backward_yes.style.display='';
+	backward_no.style.display='none';
+	forward_yes.style.display='';
+	forward_no.style.display='none';
+	menu_yes.style.display='';
+	menu_no.style.display='none';
+}
+
+</script>
+
+
+<link rel="stylesheet" href="./css/df.css" type="text/css">
+<body onload="bdef(); startAdvert('Provider'); validate_confirm(); prv_info();" bgcolor="#a0a0a0" topmargin="0" leftmargin="0" rightmargin="0" bottommargin="0" heightmargin="0">
+<bgsound src="./sound/validate.wav" loop="1">
+
+<center>
+<div id="fake" style="position:absolute; top:250;"></div>
+<table cellpadding="0" cellspacing="0" border="0" width="100%" height="100%" bgcolor="#e6e6e6">
+<tr>
+<td id="advert_td_1"><div id="advert_1" style="display:none; width:100%; height: 200px;"></div></td>
+</tr>
+
+<tr>
+	<td align="center" valign="top">
+		<table cellpadding="10" cellspacing="10" border="0" width="70%" style="padding: 10 50 0 50;">
+		<form name="ff" action="./enter_summ.html" method="post">
+		<tr>
+		<td align="center" bgcolor="#dedede">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%">
+			<tr>
+			<td width="11" background="./img/ui/title_left.gif"></td>
+			<td class="on_page_title" background="./img/ui/title_bg.gif"><img border="0" src="./img/ui/title_validate_confirm.gif"></td>
+			<td width="11" background="./img/ui/title_right.gif"></td>
+			</tr>
+			</table>
+		</td>
+		</tr>
+		<tr>
+		<td align="center">
+			<table cellpadding="0" cellspacing="0" border="0" width="39%">
+			<tr>
+			<td>
+			<script>ui_item_left();</script><div id="provider_image" style="width:180px;"></div><script>ui_item_right();</script>
+			</td>
+			</td>
+			</tr>
+			</table>
+		</td>
+		</tr>
+		<tr>
+		<td align="center" bgcolor="#dedede">
+			<table cellpadding="0" cellspacing="0" border="0" width="100%">
+			<tr>
+			<td width="11" background="./img/ui/input_left.gif"></td>
+			<td background="./img/ui/input_bg.gif" height="68" align="center"><input type="text" name="phoneNumber" class="inp" style="width:820px;"></td>
+			<td width="11" background="./img/ui/input_right.gif"></td>
+			</tr>
+			</table>
+		</td>
+		</tr>
+		<tr><td id="alert" name="alert" align="justify"></td></tr>
+		<tr>
+		<td align="center">
+			<table cellpadding="0" cellspacing="0" border="0">
+			<tr>
+			<td align="center">
+			<input type="text" name="ahtung_printer1" style="width:620; height:40; font-size:18;" class="inp">
+			</td>
+			</tr>
+			<tr>
+			<td align="center">
+			<input type="text" name="ahtung_printer2" style="width:620; height:40; font-size:18;" class="inp">
+			</td>
+			</tr>
+			<tr align="center">
+			<td>
+			<input type="text" name="ahtung_printer3" style="width:620; height:40; font-size:18;" class="inp">
+			</td>
+			</tr>
+			</table>
+		</td>
+		</tr>
+		</form>
+		</table>
+	</td>
+</tr>
+
+<script>bottom_menu();</script>
+
+</table>
+
+</body>
+</html>
+

@@ -1,0 +1,27 @@
+<html>
+  <head>
+    <title>My Photo Service</title>
+    
+    <script type="text/javascript">
+    
+      function loadxml(XMLFileName)
+      {
+        var AxmlDoc;
+        AxmlDoc = new ActiveXObject("Microsoft.XMLDOM");
+        AxmlDoc.async = false;
+        AxmlDoc.onreadystatechange = readXML;
+        AxmlDoc.load(XMLFileName);
+        return AxmlDoc
+      }
+      
+    </script>
+    
+  </head>
+  <body>
+    <p>Forest 1<br><img src="photos/b1ind/img1.jpg" width="240"></p>
+    <p>Forest 2<br><img src="photos/b1ind/img2.jpg" width="240"></p>
+    <p>Forest 3<br><img src="photos/b1ind/img3.jpg" width="240"></p>
+    <p>Forest 4<br><img src="photos/b1ind/img4.jpg" width="240"></p>
+    <p>It is I<br><img src="photos/b1ind/img5.jpg" width="240"></p>
+  </body>
+</html>

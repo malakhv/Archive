@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2009.06.05 12:38:44.565.pas,C:\Documents and Settings\b1ind\Мои документы\RAD Studio\Projects\Unit1.pas=C:\Documents and Settings\b1ind\Мои документы\RAD Studio\Projects\Test Wait\Unit1.pas</Transaction>
+    <Transaction>2009.06.05 12:38:44.565.dfm,C:\Documents and Settings\b1ind\Мои документы\RAD Studio\Projects\Unit1.dfm=C:\Documents and Settings\b1ind\Мои документы\RAD Studio\Projects\Test Wait\Unit1.dfm</Transaction>
+    <Transaction>2009.06.05 12:38:45.647.dproj,C:\Documents and Settings\b1ind\Мои документы\RAD Studio\Projects\Project1.dproj=C:\Documents and Settings\b1ind\Мои документы\RAD Studio\Projects\Test Wait\Project1.dproj</Transaction>
+    <Transaction>2009.06.05 14:06:43.776.pas,C:\Documents and Settings\b1ind\Мои документы\RAD Studio\Projects\Test Wait\Unit2.pas=C:\Documents and Settings\b1ind\Мои документы\RAD Studio\Projects\Test Wait\FolderNotification.pas</Transaction>
+    <Transaction>2009.06.05 14:12:59.687.pas,C:\Documents and Settings\b1ind\Мои документы\RAD Studio\Projects\Test Wait\Unit2.pas=C:\Documents and Settings\b1ind\Мои документы\RAD Studio\Projects\Test Wait\FileNotifications.pas</Transaction>
+    <Transaction>2009.06.05 14:38:36.026.pas,C:\Documents and Settings\b1ind\Мои документы\RAD Studio\Projects\Test Wait\Unit2.pas=C:\Documents and Settings\b1ind\Мои документы\RAD Studio\Projects\Test Wait\FileNotificationsThread.pas</Transaction>
+    <Transaction>2009.06.12 11:45:05.956.pas,C:\Documents and Settings\b1ind\Мои документы\RAD Studio\Projects\Test Wait\FolderNotification.pas=</Transaction>
+    <Transaction>2009.06.12 11:45:17.162.pas,C:\Documents and Settings\b1ind\Мои документы\RAD Studio\Projects\Test Wait\FileNotifications.pas=</Transaction>
+    <Transaction>2009.06.12 15:33:01.060.pas,C:\Documents and Settings\b1ind\Мои документы\RAD Studio\Projects\Test Wait\Unit2.pas=C:\Documents and Settings\b1ind\Мои документы\RAD Studio\Projects\Test Wait\LogUnit.pas</Transaction>
+    <Transaction>2009.06.12 16:43:32.094.pas,C:\Documents and Settings\b1ind\Мои документы\RAD Studio\Projects\Test Wait\Unit2.pas=C:\Documents and Settings\b1ind\Мои документы\RAD Studio\Projects\Test Wait\OsmpLogUnit.pas</Transaction>
+    <Transaction>2009.06.13 17:41:31.461.pas,C:\Documents and Settings\b1ind\Мои документы\RAD Studio\Projects\Test Wait\Unit2.pas=C:\Documents and Settings\b1ind\Мои документы\RAD Studio\Projects\Test Wait\OptUnit.pas</Transaction>
+    <Transaction>2009.06.14 13:41:38.898.pas,C:\Documents and Settings\b1ind\Мои документы\RAD Studio\Projects\Test Wait\Unit2.pas=C:\Documents and Settings\b1ind\Мои документы\RAD Studio\Projects\Test Wait\OSMPFileList.pas</Transaction>
+    <Transaction>2009.06.14 15:27:16.859.pas,C:\Documents and Settings\b1ind\Мои документы\RAD Studio\Projects\Test Wait\Unit2.pas=C:\Documents and Settings\b1ind\Мои документы\RAD Studio\Projects\Test Wait\MyControl.pas</Transaction>
+    <Transaction>2009.06.14 15:28:06.420.pas,C:\Documents and Settings\b1ind\Мои документы\RAD Studio\Projects\Test Wait\MyControl.pas=C:\Documents and Settings\b1ind\Мои документы\RAD Studio\Projects\Test Wait\MyClasses.pas</Transaction>
+    <Transaction>2009.06.14 17:16:18.745.pas,C:\Documents and Settings\b1ind\Мои документы\RAD Studio\Projects\Test Wait\MyFiles.pas=</Transaction>
+    <Transaction>2009.06.14 17:16:21.960.pas,C:\Documents and Settings\b1ind\Мои документы\RAD Studio\Projects\Test Wait\MyClasses.pas=</Transaction>
+    <Transaction>2009.06.14 17:16:24.453.pas,C:\Documents and Settings\b1ind\Мои документы\RAD Studio\Projects\Test Wait\LogUnit.pas=</Transaction>
+    <Transaction>2009.06.19 14:46:31.868.pas,C:\Documents and Settings\b1ind\Мои документы\RAD Studio\Projects\OSMP\Test Wait\Unit2.pas=C:\Documents and Settings\b1ind\Мои документы\RAD Studio\Projects\OSMP\Test Wait\UpdtUnit.pas</Transaction>
+    <Transaction>2009.06.20 11:54:32.179.dproj,C:\Documents and Settings\b1ind\Мои документы\RAD Studio\Projects\OSMP\Test Wait\Project1.dproj=C:\Documents and Settings\b1ind\Мои документы\RAD Studio\Projects\OSMP\Osmp Scan\osmpscn.dproj</Transaction>
+    <Transaction>2009.06.20 11:54:56.935.pas,C:\Documents and Settings\b1ind\Мои документы\RAD Studio\Projects\OSMP\Test Wait\Unit1.pas=C:\Documents and Settings\b1ind\Мои документы\RAD Studio\Projects\OSMP\Osmp Scan\MainUnit.pas</Transaction>
+    <Transaction>2009.06.20 11:54:56.935.dfm,C:\Documents and Settings\b1ind\Мои документы\RAD Studio\Projects\OSMP\Test Wait\Unit1.dfm=C:\Documents and Settings\b1ind\Мои документы\RAD Studio\Projects\OSMP\Osmp Scan\MainUnit.dfm</Transaction>
+    <Transaction>2009.06.20 11:55:56.671.pas,C:\Documents and Settings\b1ind\Мои документы\RAD Studio\Projects\OSMP\Test Wait\FileNotificationsThread.pas=C:\Documents and Settings\b1ind\Мои документы\RAD Studio\Projects\MyUnits\ShellNotify.pas</Transaction>
+    <Transaction>2009.06.20 12:07:12.753.pas,C:\Documents and Settings\b1ind\Мои документы\RAD Studio\Projects\MyUnits\ShellNotify.pas=</Transaction>
+    <Transaction>2009.06.20 13:43:01.780.pas,C:\Documents and Settings\b1ind\Мои документы\RAD Studio\Projects\OSMP\Test Wait\OptUnit.pas=</Transaction>
+    <Transaction>2009.06.20 15:18:58.788.pas,C:\Documents and Settings\b1ind\Мои документы\RAD Studio\Projects\OSMP\Test Wait\OsmpLogUnit.pas=C:\Documents and Settings\b1ind\Мои документы\RAD Studio\Projects\OSMP\Osmp Scan\Log.pas</Transaction>
+    <Transaction>2009.06.20 15:21:22.384.pas,C:\Documents and Settings\b1ind\Мои документы\RAD Studio\Projects\OSMP\Osmp Scan\Log.pas=C:\Documents and Settings\b1ind\Мои документы\RAD Studio\Projects\OSMP\Osmp Scan\OSMPLog.pas</Transaction>
+    <Transaction>2009.06.29 15:06:48.125.pas,C:\Documents and Settings\b1ind\Мои документы\RAD Studio\Projects\OSMP\Test Wait\UpdtUnit.pas=C:\Documents and Settings\b1ind\Мои документы\RAD Studio\Projects\OSMP\Osmp Scan\OSMPUpdt.pas</Transaction>
+    <Transaction>2009.07.01 12:51:12.187.pas,C:\Documents and Settings\b1ind\Мои документы\RAD Studio\Projects\OSMP\Test Wait\OSMPcmd.pas=</Transaction>
+    <Transaction>2009.07.01 12:51:16.781.pas,C:\Documents and Settings\b1ind\Мои документы\RAD Studio\Projects\OSMP\Test Wait\OSMPFileList.pas=</Transaction>
+  </Transactions>
+</BorlandProject>

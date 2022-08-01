@@ -1,0 +1,100 @@
+Это части моего кода:
+
+Типы файлов:
+	*.info - содержит информацию о приборе (Адрес, Владелец, 
+		доп. инфо1, доп. инфо2). Имя этого файла - это номер прибора.
+		(Например 4361.info)
+	*.d9m - файл с данными (показаниями) прибора. Имя этого файла 
+		состоит из номера прибора и даты.  
+		(Например 436130120091030.d9m)
+
+  
+
+В файле *.info содержится структура вида:
+
+
+TDioInfoRec = record
+  Addr: TShortChar;
+  Owner: TShortChar;
+  Res01: TLongChar;
+  Res02: TLongChar;
+end;
+
+где:
+
+  TShortChar = array[0..199] of AnsiChar; // 200 символов размером 1 байт
+  TLongChar = array[0..499] of AnsiChar;  // 500 символов размером 1 байт
+
+Файл *.d9m состоит из структур: 
+	CSData - информация о приборе и текущие показания
+	HData - непосредственно элемент показаний прибора за определенную 
+	дату или определенный час.
+
+  TCSData = record
+    SysCfg: byte;           // Тип архива (если > 2 - часовой, иначе суточный)
+    RefIndex: byte;
+    CSData: TCSDataArray;   // Данные
+    Hrs: integer;            
+    SNum: integer;          // Серийный номер        
+    ErrorCode: byte; 
+    DioType: byte;          // Тип прибора (2T4V и тд)
+    KData: TCSKArray;       // коэффициенты 
+    ArchiveDate: TDateTime; 
+  end;
+
+где: 
+  TCSDataArray = array[0..16] of Single;
+  TCSKArray = array[0..4] of Single;;
+
+  THData = record
+    Date: TDateChar;
+    Hr: byte; // час, если показания почасовые
+    HData: THDataArray;
+  end;
+
+где:
+
+  THDataArray = array[0..12] of Single;
+  TDateChar = array[0..11] of AnsiChar; // пример 12.12.2009
+
+
+Это части старого кода, по которому я разбирал форматы:
+
+typedef struct fDescript {
+  char addr[200];
+  char owner[200];
+  char res01[500];
+  char res02[500];
+} TfDescript;
+
+typedef TfDescript* pfDescript;
+
+typedef struct HData {
+  AnsiString dt;
+  byte   hr;
+  float  Q,Q1,t1,t2,t3,t4,V1,V2,V3,V4,V5,ta,Ubat;
+} THData;
+
+typedef THData* PHData;
+
+typedef struct HDataSL {
+  char dt[12];
+  byte   hr;
+  float  Q,Q1,t1,t2,t3,t4,V1,V2,V3,V4,V5,ta,Ubat;
+} THDataSL;
+
+typedef THDataSL* PHDataSL;
+
+typedef struct CSData {
+  byte refComboIndex;
+  byte sysCfg;
+  float  Q,Q1,t1,t2,t3,t4,V1,V2,V3,V4,V5,m1,m2,m3,m4,ta,bs;
+  unsigned int hrs,snum;
+  byte ErrCd;
+  byte dioType;
+  float  k1,k2,k3,k4,k5;
+  TDateTime  archCompDate;
+} TCSData;
+
+typedef TCSData* PCSData;
+		

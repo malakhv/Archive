@@ -1,0 +1,18 @@
+Select
+from
+where
+order by
+Delete
+
+Report
+ID
+UName
+Machine
+PName
+Document
+PageCount
+
+not
+and
+or
+xor

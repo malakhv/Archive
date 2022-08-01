@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xdb="http://www.borland.com/schemas/delphi/10.0/XMLDataBinding">
+  <xs:element name="DioList" type="DioListType"/>
+  <xs:complexType name="DioListType"><xs:annotation>
+      <xs:appinfo xdb:identifierName="IXMLDioList" xdb:docElement="DioList"/>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="DioInfo" type="DioInfoType" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <xs:attribute name="Name" type="xs:string"><xs:annotation>
+        <xs:appinfo xdb:dataType="string"/>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="version" type="xs:integer"/>
+  </xs:complexType>
+  <xs:complexType name="DioInfoType"><xs:annotation>
+      <xs:appinfo xdb:identifierName="IXMLDioInfo"/>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="DataFile" type="DataFileType" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <xs:attribute name="Number" type="xs:integer"/>
+    <xs:attribute name="Address" type="xs:string"><xs:annotation>
+        <xs:appinfo xdb:dataType="string"/>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="DioOwner" type="xs:string"><xs:annotation>
+        <xs:appinfo xdb:dataType="string"/>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="Info1" type="xs:string"><xs:annotation>
+        <xs:appinfo xdb:dataType="string"/>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="Info2" type="xs:string"><xs:annotation>
+        <xs:appinfo xdb:dataType="string"/>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
+  <xs:complexType name="DataFileType"><xs:annotation>
+      <xs:appinfo xdb:identifierName="IXMLDataFile"/>
+    </xs:annotation>
+    <xs:attribute name="FileName" type="xs:string"><xs:annotation>
+        <xs:appinfo xdb:dataType="string"/>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="DioDate" type="xs:string"><xs:annotation>
+        <xs:appinfo xdb:dataType="TDateTime"/>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="DioType" type="xs:integer"><xs:annotation>
+        <xs:appinfo xdb:dataType="Byte"/>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="ArcType" type="xs:integer"><xs:annotation>
+        <xs:appinfo xdb:dataType="Byte"/>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
+</xs:schema>

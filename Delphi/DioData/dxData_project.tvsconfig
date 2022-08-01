@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<TgConfig Version="3" SubLevelDisabled="False">
+  <Option Name="namespaceFolder.DataExport" Type="System.String" Value="DataExport" Category="General" IsBrowsable="False" />
+  <Option Name="namespaceFolder.DioDataLib" Type="System.String" Value="DioDataLib" Category="General" IsBrowsable="False" />
+  <Option Name="namespaceFolder.DioFieldLib" Type="System.String" Value="DioFieldLib" Category="General" IsBrowsable="False" />
+  <Option Name="namespaceFolder.DioInfoLib" Type="System.String" Value="DioInfoLib" Category="General" IsBrowsable="False" />
+  <Option Name="namespaceFolder.DioInfoUnit" Type="System.String" Value="DioInfoUnit" Category="General" IsBrowsable="False" />
+  <Option Name="namespaceFolder.DioTypes" Type="System.String" Value="DioTypes" Category="General" IsBrowsable="False" />
+  <Option Name="namespaceFolder.DioMassaLib" Type="System.String" Value="DioMassaLib" Category="General" IsBrowsable="False" />
+  <Option Name="namespaceFolder.dxData" Type="System.String" Value="dxData" Category="General" IsBrowsable="False" />
+  <Option Name="namespaceFolder.Global" Type="System.String" Value="Global" Category="General" IsBrowsable="False" />
+  <Option Name="namespaceFolder.ItemsWork" Type="System.String" Value="ItemsWork" Category="General" IsBrowsable="False" />
+  <Option Name="namespaceFolder.MainUnit" Type="System.String" Value="MainUnit" Category="General" IsBrowsable="False" />
+  <Option Name="namespaceFolder.MyOleObj" Type="System.String" Value="MyOleObj" Category="General" IsBrowsable="False" />
+  <Option Name="namespaceFolder.WordObj" Type="System.String" Value="WordObj" Category="General" IsBrowsable="False" />
+</TgConfig>

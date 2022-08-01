@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>1899.12.30 00:00:00.000.703,C:\Documents and Settings\b1ind\Мои документы\RAD Studio\Projects\MyUnits\MyFiles.pas=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.343,=C:\Documents and Settings\b1ind\Мои документы\RAD Studio\Projects\MyUnits\MyFiles.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.000,C:\Documents and Settings\b1ind\Мои документы\RAD Studio\Projects\MyUnits\MyFiles.pas=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.671,=C:\Documents and Settings\b1ind\Мои документы\RAD Studio\Projects\MyUnits\MyClasses.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.812,C:\Documents and Settings\b1ind\Мои документы\RAD Studio\Projects\Project1.dproj=C:\Documents and Settings\b1ind\Мои документы\RAD Studio\Projects\TestMatrix\Project1.dproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.328,C:\Documents and Settings\b1ind\Мои документы\RAD Studio\Projects\Unit1.dfm=C:\Documents and Settings\b1ind\Мои документы\RAD Studio\Projects\TestMatrix\Unit1.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.406,C:\Documents and Settings\b1ind\Мои документы\RAD Studio\Projects\Unit2.pas=C:\Documents and Settings\b1ind\Мои документы\RAD Studio\Projects\TestMatrix\TMtrx.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.343,=C:\Documents and Settings\b1ind\Мои документы\RAD Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.109,=C:\Documents and Settings\b1ind\Мои документы\RAD Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.828,=C:\Documents and Settings\b1ind\Мои документы\RAD Studio\Projects\MyUnits\MyFiles.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.328,C:\Documents and Settings\b1ind\Мои документы\RAD Studio\Projects\Unit1.pas=C:\Documents and Settings\b1ind\Мои документы\RAD Studio\Projects\TestMatrix\Unit1.pas</Transaction>
+    <Transaction>2011.12.07 23:01:08.546,=C:\Documents and Settings\b1ind\Мои документы\RAD Studio\Projects\TestMatrix\Unit2.pas</Transaction>
+    <Transaction>2011.12.07 23:01:42.953,C:\Documents and Settings\b1ind\Мои документы\RAD Studio\Projects\TestMatrix\TestMatrix.pas=C:\Documents and Settings\b1ind\Мои документы\RAD Studio\Projects\TestMatrix\Unit2.pas</Transaction>
+  </Transactions>
+</BorlandProject>

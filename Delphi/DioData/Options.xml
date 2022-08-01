@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DioOptions version="1">
+	<App Profile="Default">
+		<DataDir>DioData</DataDir>
+		<DioMask>n - o</DioMask>
+	</App>
+	<Dio Type="dio2T4V">
+		<Fields>
+			<Field Name="Date" Caption="Дата" FieldIndex="23">1</Field>
+			<Field Name="Q" Caption="Q Гкал" FieldIndex="0">1</Field>
+			<Field Name="T1" Caption="T1 C" FieldIndex="2">1</Field>
+			<Field Name="T2" Caption="T2 C" FieldIndex="3">1</Field>
+			<Field Name="DT1" Caption="T1-T2 C" FieldIndex="17">1</Field>
+			<Field Name="V1" Caption="V1 m3" FieldIndex="6">1</Field>
+			<Field Name="V2" Caption="V2 m3" FieldIndex="7">0</Field>
+			<Field Name="DV1" Caption="V1-V2 m3" FieldIndex="19">0</Field>
+			<Field Name="V3" Caption="V3 m3" FieldIndex="8">0</Field>
+			<Field Name="V4" Caption="V4 m3" FieldIndex="9">0</Field>
+			<Field Name="DV2" Caption="V3-V4 m3" FieldIndex="20">0</Field>
+			<Field Name="M1" Caption="M1 т" FieldIndex="13">1</Field>
+			<Field Name="M2" Caption="M2 т" FieldIndex="14">0</Field>
+			<Field Name="DM1" Caption="M1-M2 т" FieldIndex="21">0</Field>
+			<Field Name="TA" Caption="Ta C" FieldIndex="11">1</Field>
+			<Field Name="UB" Caption="UB В" FieldIndex="12">1</Field>
+		</Fields>
+		<Stats>
+			<Stat Name="Min" Caption="Мин.">1</Stat>
+			<Stat Name="Max" Caption="Макс.">1</Stat>
+			<Stat Name="Aver" Caption="Среднее">1</Stat>
+			<Stat Name="Sum" Caption="Сумма">1</Stat>
+		</Stats>
+		<Reports>
+			<Report Type="1" Name="Default Day" FileName="Report dio2T4V.doc" Caption="Суточные показания DIO-99M (2T4V)" DocInfo="Текущие показания по состоянию на" TableCaption="Архив суточных показаний за период"/>
+			<Report Type="1" Name="Short Day" FileName="Report dio2T4VShort.doc" Caption="Суточные показания DIO-99M (2T4V)" DocInfo="Текущие показания по состоянию на" TableCaption="Архив суточных показаний за период"/>
+			<Report Type="2" Name="Default Hour" FileName="Report dio2T4V.doc" Caption="Суточные показания DIO-99M (2T4V)" DocInfo="Текущие показания по состоянию на" TableCaption="Архив суточных показаний за период"/>
+		</Reports>
+	</Dio>
+	<Dio Type="dio3T3V">
+		<Fields>
+			<Field Name="Date" Caption="Дата" FieldIndex="23">1</Field>
+			<Field Name="Q" Caption="Q Гкал" FieldIndex="0">1</Field>
+			<Field Name="T1" Caption="T1 C" FieldIndex="2">1</Field>
+			<Field Name="T2" Caption="T2 C" FieldIndex="3">1</Field>
+			<Field Name="DT1" Caption="T1-T2 C" FieldIndex="17">1</Field>
+			<Field Name="T3" Caption="T3 C" FieldIndex="4">1</Field>
+			<Field Name="V1" Caption="V1 m3" FieldIndex="6">1</Field>
+			<Field Name="V2" Caption="V2 m3" FieldIndex="7">1</Field>
+			<Field Name="DV1" Caption="V1-V2 m3" FieldIndex="19">1</Field>
+			<Field Name="V3" Caption="V3 m3" FieldIndex="8">1</Field>
+			<Field Name="M1" Caption="M1 т" FieldIndex="13">1</Field>
+			<Field Name="M2" Caption="M2 т" FieldIndex="14">1</Field>
+			<Field Name="DM1" Caption="M1-M2 т" FieldIndex="21">1</Field>
+			<Field Name="M3" Caption="M3 т" FieldIndex="15">1</Field>
+			<Field Name="TA" Caption="Ta C" FieldIndex="11">1</Field>
+			<Field Name="UB" Caption="UB В" FieldIndex="12">1</Field>
+		</Fields>
+		<Stats>
+			<Stat Name="Min" Caption="Мин.">1</Stat>
+			<Stat Name="Max" Caption="Макс.">1</Stat>
+			<Stat Name="Aver" Caption="Среднее">1</Stat>
+			<Stat Name="Sum" Caption="Сумма">1</Stat>
+		</Stats>
+		<Reports>
+			<Report Name="Default" FileName="Report dio3T3V.doc"/>
+		</Reports>
+	</Dio>
+	<Dio Type="dio4T4V">
+		<Fields>
+			<Field Name="Date" Caption="Дата" FieldIndex="23">1</Field>
+			<Field Name="Q" Caption="Q Гкал" FieldIndex="0">1</Field>
+			<Field Name="T1" Caption="T1 C" FieldIndex="2">1</Field>
+			<Field Name="T2" Caption="T2 C" FieldIndex="3">1</Field>
+			<Field Name="DT1" Caption="T1-T2 C" FieldIndex="17">1</Field>
+			<Field Name="T3" Caption="T3 C" FieldIndex="4">1</Field>
+			<Field Name="T4" Caption="T4 C" FieldIndex="5">1</Field>
+			<Field Name="DT2" Caption="T3-T4 C" FieldIndex="18">1</Field>
+			<Field Name="V1" Caption="V1 m3" FieldIndex="6">1</Field>
+			<Field Name="V2" Caption="V2 m3" FieldIndex="7">1</Field>
+			<Field Name="DV1" Caption="V1-V2 m3" FieldIndex="19">1</Field>
+			<Field Name="V3" Caption="V3 m3" FieldIndex="8">1</Field>
+			<Field Name="V4" Caption="V4 m3" FieldIndex="9">1</Field>
+			<Field Name="DV2" Caption="V3-V4 m3" FieldIndex="20">1</Field>
+			<Field Name="M1" Caption="M1 т" FieldIndex="13">1</Field>
+			<Field Name="M2" Caption="M2 т" FieldIndex="14">1</Field>
+			<Field Name="DM1" Caption="M1-M2 т" FieldIndex="21">1</Field>
+			<Field Name="M3" Caption="M3 т" FieldIndex="15">1</Field>
+			<Field Name="M4" Caption="M4 т" FieldIndex="16">1</Field>
+			<Field Name="DM2" Caption="M3-M4 т" FieldIndex="22">22</Field>
+			<Field Name="TA" Caption="Ta C" FieldIndex="11">1</Field>
+			<Field Name="UB" Caption="UB В" FieldIndex="12">1</Field>
+		</Fields>
+		<Stats>
+			<Stat Name="Min" Caption="Мин.">1</Stat>
+			<Stat Name="Max" Caption="Макс.">1</Stat>
+			<Stat Name="Aver" Caption="Среднее">1</Stat>
+			<Stat Name="Sum" Caption="Сумма">1</Stat>
+		</Stats>
+		<Reports>
+			<Report Type="1" Name="Default" FileName="Report dio2T4V.doc" Caption="Суточные показания DIO-99M (2T4V)" DocInfo="Текущие показания по состоянию на" TableCaption="Архив суточных показаний за период"/>
+		</Reports>
+	</Dio>
+</DioOptions>

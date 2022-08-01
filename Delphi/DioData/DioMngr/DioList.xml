@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DioList Name="Default" version="1">
+	<DioInfo Number="1001" Address="Test Address 1001" DioOwner="Test Owner" Info1="Test Info1" Info2="Test Info2">
+		<DataFile FileName="Test1.d9m" DioDate="21.12.09" DioType="255" ArcType="0"/>
+		<DataFile FileName="Test2.d9m" DioDate="21.11.09" DioType="0" ArcType="1"/>
+		<DataFile FileName="Test3.d9m" DioDate="21.10.09" DioType="255" ArcType="0"/>
+	</DioInfo>
+	<DioInfo Number="4001" Address="ул.Текстильная 23" DioOwner="ООО Бизнес Инвест" Info1="" Info2=""><DataFile FileName="4001 27-02-2009 11-43-18" DioDate="27.02.2009 11:43:18" DioType="255" ArcType="1"/></DioInfo><DioInfo Number="4003" Address="ул.Ленина 1" DioOwner="ООО КЗМ" Info1="" Info2=""/><DioInfo Number="4190" Address="ул.Ленина 5" DioOwner="УК КХБК Транспортный цех" Info1="" Info2=""/><DioInfo Number="7537" Address="Адрес" DioOwner="Владелец" Info1="" Info2=""><DataFile FileName="7537 26-02-2009 15-17-09" DioDate="26.02.2009 15:17:10" DioType="255" ArcType="1"/></DioInfo><DioInfo Number="12009" Address="Адрес" DioOwner="Владелец" Info1="" Info2=""><DataFile FileName="12009 12-11-2008 13-50-06" DioDate="12.11.2008 13:50:07" DioType="255" ArcType="1"/></DioInfo></DioList>

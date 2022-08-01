@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2007.09.26 16:09:02.906.pas,C:\Documents and Settings\Малахов\Мои документы\Borland Studio Projects\Unit1.pas=C:\Documents and Settings\Малахов\Мои документы\Borland Studio Projects\NetSend\MainUnit.pas</Transaction>
+    <Transaction>2007.09.26 16:09:02.906.dfm,C:\Documents and Settings\Малахов\Мои документы\Borland Studio Projects\Unit1.dfm=C:\Documents and Settings\Малахов\Мои документы\Borland Studio Projects\NetSend\MainUnit.dfm</Transaction>
+    <Transaction>2007.09.26 16:09:10.171.bdsproj,C:\Documents and Settings\Малахов\Мои документы\Borland Studio Projects\Project1.bdsproj=C:\Documents and Settings\Малахов\Мои документы\Borland Studio Projects\NetSend\NSend.bdsproj</Transaction>
+    <Transaction>2007.09.26 16:22:22.281.pas,C:\Documents and Settings\Малахов\Мои документы\Borland Studio Projects\NetSend\Unit1.pas=C:\Documents and Settings\Малахов\Мои документы\Borland Studio Projects\NetSend\DMUnit.pas</Transaction>
+    <Transaction>2007.09.26 16:22:22.281.dfm,C:\Documents and Settings\Малахов\Мои документы\Borland Studio Projects\NetSend\Unit1.dfm=C:\Documents and Settings\Малахов\Мои документы\Borland Studio Projects\NetSend\DMUnit.dfm</Transaction>
+    <Transaction>2007.09.26 17:02:27.484.pas,C:\Documents and Settings\Малахов\Мои документы\Borland Studio Projects\NetSend\Unit1.pas=C:\Documents and Settings\Малахов\Мои документы\Borland Studio Projects\NetSend\Global.pas</Transaction>
+    <Transaction>2007.11.17 18:45:48.265.pas,C:\Documents and Settings\b1ind\Мои документы\Borland Studio Projects\NetSend\Unit1.pas=C:\Documents and Settings\b1ind\Мои документы\Borland Studio Projects\NetSend\NetSend.pas</Transaction>
+  </Transactions>
+</BorlandProject>

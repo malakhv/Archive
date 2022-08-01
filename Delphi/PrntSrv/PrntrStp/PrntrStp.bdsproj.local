@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2007.03.06 21:34:29.453.pas,C:\Documents and Settings\b1ind\Мои документы\Borland Studio Projects\Unit1.pas=C:\Documents and Settings\b1ind\Мои документы\Borland Studio Projects\PrntSrv\PrntrStp\MainUnit.pas</Transaction>
+    <Transaction>2007.03.06 21:34:29.453.dfm,C:\Documents and Settings\b1ind\Мои документы\Borland Studio Projects\Unit1.dfm=C:\Documents and Settings\b1ind\Мои документы\Borland Studio Projects\PrntSrv\PrntrStp\MainUnit.dfm</Transaction>
+    <Transaction>2007.03.09 14:13:46.843.pas,C:\Documents and Settings\b1ind\Мои документы\Borland Studio Projects\PrntSrv\PrntrStp\GlobalPrSrv.pas=</Transaction>
+    <Transaction>2007.03.09 17:06:36.218.pas,C:\Documents and Settings\b1ind\Мои документы\Borland Studio Projects\PrntSrv\PrntrStp\Unit1.pas=C:\Documents and Settings\b1ind\Мои документы\Borland Studio Projects\PrntSrv\PrntrStp\AddPrinter.pas</Transaction>
+    <Transaction>2007.03.09 17:06:36.218.dfm,C:\Documents and Settings\b1ind\Мои документы\Borland Studio Projects\PrntSrv\PrntrStp\Unit1.dfm=C:\Documents and Settings\b1ind\Мои документы\Borland Studio Projects\PrntSrv\PrntrStp\AddPrinter.dfm</Transaction>
+  </Transactions>
+</BorlandProject>

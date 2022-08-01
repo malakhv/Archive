@@ -1,0 +1,583 @@
+<html>
+<head>
+	<title>provider / 180</title>
+	<meta http-equiv="content-type" content="text/html; charset=windows-1251">
+	<meta http-equiv="pragma" content="no-cache">
+	<meta http-equiv="refresh" content="180; URL=./index.html">
+</head>
+
+<script src="./func/ui/objects.js"></script>
+<script src="./advert.js"></script>
+<script src="./advert_content.js"></script>
+<script src="./prv_values.js"></script>
+<script src="./func/engine/pars_cookie.js"></script>
+<script src="./func/engine/extra_prv.js"></script>
+<script src="./sort.js"></script>
+<script src='./config.js'></script>
+
+<script>
+
+var prv_value = 0;
+var curPrv = 0;
+var curPage = 0;
+var curField = 0;
+var curVal = '';
+
+function validateFields()
+{
+	if (fields.length == 0)
+	    document.getElementById("errorDiv").style.display = "block";
+	
+	forward_yes.style.display='none';
+	forward_no.style.display='';
+
+	for(var i=0; i<fields.length; i++)
+	{
+	  if(fields[i].maxLength>0)
+	  {
+	    if(fields[i].value=='')
+	    {
+	      return; // null when length specified
+	    }
+	  }
+	  else if (!fields[i].canBeNull)
+	  {
+	    if(fields[i].value=='')
+	    {
+	      return; // null when cant be null
+	    }
+	  }
+	}
+	forward_yes.style.display='';
+	forward_no.style.display='none';
+}
+
+function shiftflag(sfs)
+{
+    setStateKeyBoard('shift');
+}
+
+function tabs()
+{
+    if (curField < fields.length - 1)
+    {   
+        curField++;
+        switchArrows();
+    }
+}
+
+function setPrevField()
+{
+    if (curVal == "")
+        if (curField > 0)
+        {
+            curField--;
+            switchArrows();
+        }    
+}
+
+function clear()
+{
+    for (var i=fields.length-1; i>=0; i--)
+    {
+        curField = i;
+        setVal("");
+        switchArrows();
+    }
+}
+
+function pageBack()
+{
+	curField = 0;
+	saveValues();
+	if(curPage == 0) 
+	{ 
+	  document.cookie = "prv_value=null";
+	  parent.location = "./pages.html";
+	  return;
+	}
+	else
+	{
+	  curPage--;
+	}
+	switchPage();
+}
+
+function pageFwd()
+{
+	curField = 0;
+	saveValues();
+	if(curPage >= fieldsDescr[curPrv].length - 1) 
+	{ 
+	  var hid = '';
+
+	  for(var i=0; i<fieldsDescr[curPrv].length; i++)	
+	  {
+	    var fld = ''; //fieldsDescr[curPrv][i].fieldName+' = ';
+	    for(var j=0; j<fieldsDescr[curPrv][i].enteredValues.length; j++)
+	    {
+	      fld += fieldsDescr[curPrv][i].enteredValues[j].prefix + fieldsDescr[curPrv][i].enteredValues[j].value;
+	    }
+	    if (fieldsDescr[curPrv][i].fieldName=='account')
+	    {
+	      ff.getAccountNumber.value=fld;
+	    } 
+	    else
+	    {
+	      hid += '<input type="hidden" name="_extra_ev_' + fieldsDescr[curPrv][i].fieldName + '" value="' + fld + '">';
+	    }
+	  }
+	  document.getElementById('hiddens').innerHTML = hid;
+	  document.cookie = "Phone_Number=" + ff.getAccountNumber.value;
+	  ff.submit();
+	  return;
+	}
+	else
+	{
+	  curPage++;
+	}
+	switchPage();
+}
+
+function switchPage(){
+	place(curPage);
+	switchArrows();
+	validateFields();
+}
+
+function saveValues(){
+	fieldsDescr[curPrv][curPage].enteredValues = new Array();
+	for (var i=0;i<fields.length;i++){
+	  fieldsDescr[curPrv][curPage].enteredValues[fieldsDescr[curPrv][curPage].enteredValues.length] = new enteredValue(fields[i].prefix,fields[i].value);
+	}
+}
+
+function switchArrows(){
+	for (var i=0;i<fields.length;i++){
+	  document.getElementById('arrow'+i).src='./img/ui/arrow_off.gif';
+	}
+	var curFld = document.getElementById('arrow'+curField);
+	if (curFld)
+	    curFld.src='./img/ui/arrow_on.gif';
+}
+
+var enteredValue = function(prefix,value){
+	this.prefix = prefix;
+	this.value = value;
+}
+
+var fields = new Array();
+
+var field = function(tp,ln,idx,lstr){
+  this.type=tp;
+  this.maxLength=0;
+  this.canBeNull=false;
+  this.index=idx;
+  this.prefix=lstr;
+	try {
+		this.value=fieldsDescr[curPrv][curPage].enteredValues[this.index].value;
+	} 
+
+	catch(e){
+		this.value='';
+	}
+
+	if(ln=="*"){
+		this.canBeNull=true;
+	} 
+
+	else if (ln != "+"){
+		this.maxLength=ln;
+	}
+
+	this.getInput = function(){
+	var res = '';
+	res = 
+		'<td width="5"></td>' +
+		'<td width="11" background="./img/ui/input_left.gif"></td>' +
+		'<td background="./img/ui/input_bg.gif" height="68">' +
+		'<input type=text class=inp id=field' + this.index + 
+			' value = "' + this.value + '"' +
+			' maxlength = '+ (this.maxLength>0 ? this.maxLength : '20') +
+			' size = ' + (this.maxLength>0 ? (this.maxLength>2 ? this.maxLength-2 : 1) : '20') + '></td>' +
+		'<td width="11" background="./img/ui/input_right.gif"></td>';
+	return res;
+	}
+	}
+
+function parse(ix){
+	var res = 
+		'<table cellpadding="10" cellspacing="0" border="0">' +
+		'<tr><td bgcolor="#dedede">'+fieldsDescr[curPrv][ix].title+'</td></tr>' +
+		'<tr>' +
+		'<td bgcolor="#dedede" nowrap>' +
+		'<table cellpadding="0" cellspacing="0" border="0">' +
+		'<tr>';
+	fields = new Array();
+	var arrows = '';  
+	var mask=fieldsDescr[curPrv][ix].fieldMask;
+	var lstr = ''; // string before input
+	while(mask.indexOf("\\") != -1){
+	slash = mask.indexOf("\\");
+	if (mask.substring(0,slash) != ""){
+		lstr = mask.substring(0,slash);
+		res += 
+			'<td width="5" nowrap>&nbsp;</td>' +
+			'<td class=inp nowrap>'+lstr+'</td>';
+			arrows +=
+			'<td colspan=2 nowrap>&nbsp;</td>';
+			mask=mask.substring(slash);
+	}
+	var fType=mask.charAt(1);
+    var fIndex=fields.length;
+
+    switch(mask.charAt(2))
+    {
+      case '{':
+        e = mask.indexOf("}");
+        fields[fields.length] = new field(fType,mask.substring(3,e),fIndex,lstr);
+        mask=mask.substring(e+1);
+        break;
+      case '+':
+      case '*':
+        fields[fields.length] = new field(fType,mask.charAt(2),fIndex,lstr);
+        mask=mask.substring(3);
+        break;
+    }
+
+    res += fields[fields.length-1].getInput();
+	arrows += '<td colspan=4 align=center><img id="arrow'+ fIndex +'" border="0" src="./img/ui/arrow_off.gif"></td>';
+	lstr = '';
+  }
+
+  res +=
+    '</tr>' +
+    '<tr>' + arrows + '</tr>' +
+    '</table>'+
+    '</td>' +
+	'</tr>' +
+	'<tr><td bgcolor="#dedede">'+fieldsDescr[curPrv][ix].caption+'</td></tr>' +
+	'</table>';
+	
+  return res;
+}
+
+function place(ix)
+{
+  document.getElementById("dst").innerHTML = parse(ix);
+}
+
+
+var code = 0;
+var stateKeyboard = 1;
+var caps = 0;
+var shift = 0;
+var engrus = 'eng';
+
+function getVal()
+{
+	return document.getElementById('field'+curField).value;
+}
+
+function setVal(fv)
+{
+	document.getElementById('field'+curField).value = fv;
+	fields[curField].value = fv;
+}
+
+function setStateKeyBoard(key, symbol)
+{
+    switch (stateKeyboard)
+    {
+        case 1:
+            if (key == 'caps') {code = 1; stateKeyboard = 2; document.shift.src='./img/ui/kboard/b3_caps_lock_on.gif';}
+            if (key == 'shift') {code = 1; stateKeyboard = 3; document.shiftflagn.src='./img/ui/kboard/b4_shift_on.gif';}
+            if (key == 'engrus') {code = 2; stateKeyboard = 5; document.raskl.src='./img/ui/kboard/russian-raskl.gif';}
+            break;
+        
+        case 2:
+            if (key == 'caps') {code = 0; stateKeyboard = 1; document.shift.src='./img/ui/kboard/b3_caps_lock.gif';}
+            if (key == 'shift') {code = 0; stateKeyboard = 4; document.shiftflagn.src='./img/ui/kboard/b4_shift_on.gif';}
+            if (key == 'engrus') {code = 3; stateKeyboard = 6; document.raskl.src='./img/ui/kboard/russian-raskl.gif';}
+            break;
+        
+         case 3:
+            if (key == 'caps') {code = 0; stateKeyboard = 4; document.shift.src='./img/ui/kboard/b3_caps_lock_on.gif';}
+            if (key == 'shift') {code = 0; stateKeyboard = 1; document.shiftflagn.src='./img/ui/kboard/b4_shift.gif';}
+            if (key == 'engrus') {code = 3; stateKeyboard = 7; document.raskl.src='./img/ui/kboard/russian-raskl.gif';}
+            break;
+        
+         case 4:
+            if (key == 'caps') {code = 1; stateKeyboard = 3; document.shift.src='./img/ui/kboard/b3_caps_lock.gif';}
+            if (key == 'shift') {code = 1; stateKeyboard = 2; document.shiftflagn.src='./img/ui/kboard/b4_shift.gif';}
+            if (key == 'engrus') {code = 2; stateKeyboard = 8; document.raskl.src='./img/ui/kboard/russian-raskl.gif';}
+            break;
+        
+         case 5:
+            if (key == 'caps') {code = 3; stateKeyboard = 6; document.shift.src='./img/ui/kboard/b3_caps_lock_on.gif';}
+            if (key == 'shift') {code = 3; stateKeyboard = 7; document.shiftflagn.src='./img/ui/kboard/b4_shift_on.gif';}
+            if (key == 'engrus') {code = 0; stateKeyboard = 1; document.raskl.src='./img/ui/kboard/latin-raskl.gif';}
+            break;
+        
+         case 6:
+            if (key == 'caps') {code = 2; stateKeyboard = 5; document.shift.src='./img/ui/kboard/b3_caps_lock.gif';}
+            if (key == 'shift') {code = 2; stateKeyboard = 8; document.shiftflagn.src='./img/ui/kboard/b4_shift_on.gif';}
+            if (key == 'engrus') {code = 1; stateKeyboard = 2; document.raskl.src='./img/ui/kboard/latin-raskl.gif';}
+            break;
+        
+         case 7:
+            if (key == 'caps') {code = 2; stateKeyboard = 8; document.shift.src='./img/ui/kboard/b3_caps_lock_on.gif';}
+            if (key == 'shift') {code = 2; stateKeyboard = 5; document.shiftflagn.src='./img/ui/kboard/b4_shift.gif';}
+            if (key == 'engrus') {code = 1; stateKeyboard = 3; document.raskl.src='./img/ui/kboard/latin-raskl.gif';}
+            break;
+        
+         case 8:
+            if (key == 'caps') {code = 3; stateKeyboard = 7; document.shift.src='./img/ui/kboard/b3_caps_lock.gif';}
+            if (key == 'shift') {code = 3; stateKeyboard = 6; document.shiftflagn.src='./img/ui/kboard/b4_shift.gif';}
+            if (key == 'engrus') {code = 0; stateKeyboard = 4; document.raskl.src='./img/ui/kboard/latin-raskl.gif';}
+            break;
+    }
+}
+
+function IsAbrBase()
+{
+  var ts = getcookie('prv_alert');
+  ts = ts.toLowerCase(ts);
+  return (ts.lastIndexOf('абрикос') > 0) && (ts.lastIndexOf('базовый') > 0);
+}
+
+function IsAbrSocp()
+{
+  var ts = getcookie('prv_alert');
+  ts = ts.toLowerCase(ts);
+  return (ts.lastIndexOf('абрикос') > 0) && (ts.lastIndexOf('социальный') > 0);
+}
+
+function IsAbricos()
+{
+  var ts = getcookie('prv_alert');
+  ts = ts.toLowerCase(ts);
+  return ts.lastIndexOf('абрикос') > 0;
+}
+
+function IsSMS()
+{
+  var ts = getcookie('prv_alert');
+  ts = ts.toLowerCase(ts);
+  return (ts.lastIndexOf('смс') > 0) && (ts.lastIndexOf('дневник') > 0) && (ts.lastIndexOf('камышин') > 0);
+}
+
+function IsTrader()
+{
+  var ts = getcookie('prv_alert');
+  ts = ts.toLowerCase(ts);
+  return (ts.lastIndexOf('торговый') > 0) && (ts.lastIndexOf('дом') > 0) && (ts.lastIndexOf('камышина') > 0);
+}
+
+function press(digit) 
+{
+	if (fields.length == 0)
+	    return;
+	
+	curVal = getVal();
+		switch (digit)
+		{
+			case 'shift':
+                setStateKeyBoard('caps');
+			    break;
+			
+			case 'engrus':
+                setStateKeyBoard('engrus');
+			    break;
+			
+			case 'enter':
+			    break;
+			
+			case 'ochistit': 
+                clear();
+				break;
+				
+			case 'b4':
+				curVal = curVal.substring(0,curVal.length-1);
+				setVal(curVal);
+				setPrevField();
+				break;
+				
+      case 'bs':
+        if( IsAbricos() || IsSMS() || IsTrader() )
+        {
+		      curVal = curVal.substring(0,curVal.length-1);
+				  setVal(curVal);
+				  setPrevField();
+        }
+        break;
+
+      case 'c':
+        if( IsAbricos() || IsSMS() || IsTrader() )
+        {
+          clear();
+        }
+        break;
+
+			default: 
+				if ((curVal.length<fields[curField].maxLength) | (fields[curField].maxLength==0))
+				{
+					    curVal = curVal + digit.substring((code + shift),(code + shift + 1));
+					setVal(curVal);
+				}
+				else
+				{
+					tabs();
+					curVal = getVal();
+					if ((curVal.length<fields[curField].maxLength) | (fields[curField].maxLength==0))
+					{
+					if (engrus == 'rus')
+					    curVal = curVal + digit.substring((code + shift2),(code + shift2 + 1));
+					else    
+					    curVal = curVal + digit.substring((code + shift),(code + shift + 1));
+						setVal(curVal);
+					}
+				}
+				if (stateKeyboard == 3 || stateKeyboard == 4 || stateKeyboard == 7 || stateKeyboard == 8)
+            	{
+	                setStateKeyBoard('shift');
+	            }
+
+		}
+		validateFields();
+		if(!(IsAbricos() || IsSMS() || IsTrader()))
+			document.shiftflagn.src='./img/ui/kboard/b4_shift.gif';
+}
+
+function bdef()
+{
+	addExtraPrvToValues();
+	backward_yes.style.display='';
+	backward_no.style.display='none';
+	forward_yes.style.display='none';
+	forward_no.style.display='';
+	menu_yes.style.display='';
+	menu_no.style.display='none';
+	var curent_page = document.location.href;
+	document.cookie='last_page=' + curent_page;
+	prv_value = getcookie('prv_value');
+	curPrv=value[prv_value]["prv_id"];
+}
+
+function prv_info()
+{
+	document.getElementById("provider_image").innerHTML = 
+	'<table width=100% cellpadding="0" height="140" cellspacing="0" border="0">'+
+	'<tr><td width="16" background="./img/ui/ui_item_left.gif"></td>'+
+	'<td background="./img/ui/ui_item_bg.gif" align="center" valign="middle">'+
+	'<img src='+value[prv_value]["prv_image"]+' height=100></img><br>'+
+	'<font weight=bold>'+value[prv_value]["prv_name"]+'</font></td>'+
+	'<td width="16" background="./img/ui/ui_item_right.gif"></td></tr>'+
+	'</table>';
+}
+
+function menu() 
+{
+	parent.location = "./main.html";
+}
+
+function backward() 
+{
+	pageBack();
+}
+
+function forward() 
+{
+	pageFwd();
+}
+
+</script>
+
+<link rel="stylesheet" href="./css/df.css" type="text/css">
+<body onload="startAdvert('Provider');bdef(); switchPage(); prv_info();" bgcolor="#a0a0a0" topmargin="0" leftmargin="0" rightmargin="0" bottommargin="0" heightmargin="0">
+<div id="errorDiv" style="display: none; position: absolute; left: 333px; top: 250px; width: 900px; height: 120px; background-color: #dedede; padding-top: 40px;" class="inp">Неверно заданы поля</div>
+<center>
+
+<table cellpadding="0" cellspacing="0" border="0" width="100%" height="100%" bgcolor="#e6e6e6">
+
+  <tr>
+    <td id="advert_td_1" valign="top"><div id="advert_1" style="display:none; width:100%; height: 200px;"></div></td>
+  </tr>
+
+  <tr>
+    <td align="center" valign="top">
+      <table cellpadding="0" cellspacing="0" border="0" width="1200" style="padding: 10 0 0 0;">
+        <tr>
+
+          <td align="right" valign="middle" width="290">
+		        <table cellpadding="0" cellspacing="0" border="0" width="100%">
+		          <tr>
+		            <td>
+                  <table cellpadding="10" cellspacing="0" border="0" width="100%" height="100%">
+                    <tr>
+                      <td id="provider_image" height="140" valign="middle">-</td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+		        </table>
+          </td>
+
+          <td>
+		        <table cellpadding="0" cellspacing="0" border="0" width="100%">
+            <form name="ff" action="./validate_confirm_extra.html" method="post">
+            <input type="hidden" name="getAccountNumber" value="">
+            <div id="hiddens"></div>
+		          <tr>
+		            <td valign="top">
+                  <table cellpadding="0" cellspacing="0" border="0" width="100%" height="100%">
+                    <tr>
+                      <td bgcolor="#dedede">
+                        <table><tr><td id="dst">-</td></tr></table>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </form>
+		        </table>
+          </td>
+	
+          <td>
+            <script>
+              if( IsAbricos() || IsSMS() || IsTrader() )
+              {
+                document.write('<table cellpadding="0" cellspacing="0" border="0" width="100%" ><tr><td align="center" valign="top"><table cellpadding="2" cellspacing="0" border="0" ><tr><td bgcolor="#dedede">');
+                get_keypad();
+                document.write('</td></tr></table></td></tr></table>');
+              }
+              else
+               document.write('&nbsp;');
+            </script>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      <script>
+        if(!( IsAbricos() || IsSMS() || IsTrader() ))
+        {
+          document.write('<table cellpadding="0" cellspacing="0" border="1" width="100%" ><tr><td align="center" valign="top"><table cellpadding="2" cellspacing="0" border="1" ><tr><td bgcolor="#dedede">');
+          get_keyboard();
+          document.write('</td></tr></table></td></tr></table>');
+        }
+        else
+          document.write('&nbsp;');
+      </script>
+    </td>
+  </tr>
+  
+    <script>bottom_menu();</script>
+  </table>
+
+</body>
+</html>
+
