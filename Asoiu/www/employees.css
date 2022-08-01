@@ -1,0 +1,29 @@
+p.name {
+  font-size: 12pt;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  text-indent: 0px;
+  font-weight: bold;
+}
+
+table.employees {
+  width: 100%;
+}
+
+table.employees td {
+  width: 50%;
+}
+
+table.employees a {
+  color: #E7F7FF;
+}
+
+table.employees a:hover {
+  color: #152837;
+}
+
+p.info {
+  margin-top: 0pt;
+  margin-bottom: 12pt;
+  text-indent: 15px;
+}

@@ -1,0 +1,16 @@
+table.disciplines {
+  border: solid 1px;
+}
+
+table.disciplines td {
+  border: solid 1px white;
+  padding: 2px;
+}
+
+table.disciplines tr.head {
+  font-weight: bold;
+}
+
+table.disciplines tr.head td {
+  text-align: center;
+}

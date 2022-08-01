@@ -1,0 +1,57 @@
+
+body {font-family: Times New Roman; font-size: 14; color: #333333}
+
+font {font-family: Times New Roman; font-size: 14; color: #333333}
+
+h1,h2,h3,h4 {color: #45688E}
+
+a {color: #2B587A;}
+a.Del {color: #D3D3D3; text-decoration:blink;}
+
+font.Link {color: #D3D3D3;}
+
+h2.NoBMargin {margin-bottom: 0px;}
+
+p.p1  {margin: 0; text-align: center; margin-bottom: 16px;};
+
+table             {font-family:Times New Roman; font-size: 14; color: #333333;
+                    border-collapse: collapse;}
+td                {border-style: solid; border-width: 1px; text-align: center; padding: 2px;}
+tr.Head           {background-color: #F5EDBE; text-align: center;}
+td.alR            {text-align: right;}
+td.alL            {text-align: left;}
+td.Sep            {border-style: none; border-width: 0px;}
+
+table.NoInfo    {border-style: none; font-family: Times New Roman; font-size: 20; color: gray;}
+table.NoInfo td {border-style: none;}
+
+p.PHead {text-align: center; font-size: 14; color: black;}
+p.Head  {text-align: center; font-size: 16; color: black;}
+p.PS    {text-align: center; font-size: 18; color: black; margin-bottom: 0px;}
+p.Date  {text-align: center; font-size: 14; color: black; margin-top: 0px;}
+
+table.PStart  {font-family:Times New Roman; font-size: 14; color: black;
+                border-style: none;}
+tr.PStHead    {background-color: #CCCCCC; text-align: center;}
+tr.PStHead td {border-style: solid; border-width: 1px;}
+table.PStart td  {border-style: none;}
+tr.Heats  {border-top-style: solid;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

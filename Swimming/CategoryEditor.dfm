@@ -1,0 +1,51 @@
+object frmCategory: TfrmCategory
+  Left = 0
+  Top = 0
+  Caption = 'frmCategory'
+  ClientHeight = 450
+  ClientWidth = 632
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object StatusBar1: TStatusBar
+    Left = 0
+    Top = 431
+    Width = 632
+    Height = 19
+    Panels = <>
+  end
+  object ActionMainMenuBar: TActionMainMenuBar
+    Left = 0
+    Top = 0
+    Width = 632
+    Height = 29
+    UseSystemFont = False
+    Caption = 'ActionMainMenuBar'
+    ColorMap.HighlightColor = 14410210
+    ColorMap.BtnSelectedColor = clBtnFace
+    ColorMap.UnusedColor = 14410210
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clMenuText
+    Font.Height = -13
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    Spacing = 0
+  end
+  object ActionToolBar: TActionToolBar
+    Left = 0
+    Top = 29
+    Width = 632
+    Height = 29
+    Caption = 'ActionToolBar'
+    ColorMap.HighlightColor = 14410210
+    ColorMap.BtnSelectedColor = clBtnFace
+    ColorMap.UnusedColor = 14410210
+    Spacing = 0
+  end
+end
