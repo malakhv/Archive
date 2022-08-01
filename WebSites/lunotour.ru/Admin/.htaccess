@@ -1,0 +1,4 @@
+AuthType Basic
+AuthName "Upload File"
+AuthUserFile /storage/home/srv14529/.htpasswd
+require valid-user

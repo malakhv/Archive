@@ -1,0 +1,74 @@
+body {
+  font-family: Verdana;
+  font-size: 10pt;
+  color: #333333;
+}
+
+table {
+  font-family: Verdana;
+  font-size: 12pt;
+  border: none 0px;
+  border-collapse: collapse;
+}
+
+td {
+  border: solid 1px #999999;
+}
+
+h1 {
+  font-size: 14pt;
+  font-weight: Normal;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-size: 12pt;
+  font-weight: Normal;
+}
+
+a {
+  font-size: 10pt;
+  color: navy;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a.Admin {
+  color: silver;
+  text-decoration: none;
+}
+
+a.Admin:hover {
+  color: navy;
+}
+
+input {
+  border: solid 1px silver;
+  padding: 2px;
+  width: 400px;
+}
+
+input.Btn {
+  width: 100px;
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+
+input.Short {
+  width: 30px;
+}
+
+input.Login {
+  width: 200px;
+}
+
+textarea {
+  border: solid 1px silver;
+  padding: 2px;
+  width: 600px;
+}
+

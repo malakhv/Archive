@@ -1,0 +1,406 @@
+
+body
+       {
+          background:       #f9edda;
+          margin-top:       0pt;
+          margin-left:      0pt;
+          padding-top:      0pt;
+          padding-left:     0pt;
+          padding-right:    0pt;
+          padding-bottom:   0pt;
+          left:             0pt;
+          top:              0pt;
+        }
+table
+       {
+          width:                  1007px;
+          background-color:       #f9edda;
+          background-repeat:      no-repeat;
+          background-position:    top;
+          border-collapse:        collapse;
+          border-right:           medium none;
+          border-top:             medium none;
+          border-left:            medium none;
+          border-bottom:          medium none;
+        }
+table.left_tbl /*подтаблица слева*/
+       {
+          width:                160px;
+          height:               318px;
+          background-color:     #f9edda;
+          background-repeat:    no-repeat;
+          background-position:  top;
+          border-collapse:      collapse;
+          border-right:         medium none;
+          border-top:           medium none;
+          border-left:          medium none;
+          border-bottom:        medium none;
+          padding:              0px;
+          margin:               0px;
+        }
+table.right_tbl /*подтаблица справа*/
+       {
+          width:                173px;
+          height:               318px;
+          background-color:     #f9edda;
+          background-repeat:    no-repeat;
+          background-position:  top;
+          border-collapse:      collapse;
+          border-right:         medium none;
+          border-top:           medium none;
+          border-left:          medium none;
+          border-bottom:        medium none;
+          padding:              0px;
+          margin:               0px;
+        }
+table.inside  /*таблицы внутри статей*/
+        {
+          width:            100%;
+          font-family:      Verdana;
+          font-size:        10pt;
+          text-align:       center;
+          border-collapse:  collapse;
+          border-color:     white;
+          padding:          0px;
+          margin:           0px;
+        }
+td.inside_tbl
+        {
+          padding: 5px;
+        }
+td.sborder /*пол€ по бокам*/
+    {
+         width:           2px;
+         vertical-align:  top;
+         padding-left:    0pt;
+         padding-top:     0pt;
+         padding-right:   0pt;
+         padding-bottom:  0pt;
+         margin-top:      0pt;
+         margin-left:     0pt;
+         margin-bottom:   0pt;
+         margin-right:    0pt;
+    }
+td.logo /*шапка*/
+      {
+          width:            1007px;
+          height:           137px;
+          vertical-align:   top;
+          padding-left:     0pt;
+          padding-top:      0pt;
+          padding-right:    0pt;
+          padding-bottom:   0pt;
+          margin-top:       0pt;
+          margin-left:      0pt;
+          margin-bottom:    0pt;
+          margin-right:     0pt;
+      }
+td.hole3 /*пуста€ €чейка слева*/
+      {
+          width:            160px;
+          height:           36px;
+          vertical-align:   top;
+          padding-left:     0pt;
+          padding-top:      0pt;
+          padding-right:    0pt;
+          padding-bottom:   0pt;
+          margin-top:       0pt;
+          margin-left:      0pt;
+          margin-bottom:    0pt;
+          margin-right:     0pt;
+      }
+td.sm /*промежутки между разделами*/
+      {
+          width:            2px;
+          height:           36px;
+          vertical-align:   top;
+          padding-left:     0pt;
+          padding-top:      0pt;
+          padding-right:    0pt;
+          padding-bottom:   0pt;
+          margin-top:       0pt;
+          margin-left:      0pt;
+          margin-bottom:    0pt;
+          margin-right:     0pt;
+      }
+td.chptr /*разделы*/
+      {
+          width:                132px;
+          height:               36px;
+          padding:              0px;
+          background-position:  top;
+          background-repeat:    no-repeat;
+          vertical-align:       middle;
+      }
+div.chptr
+      {
+          width:          132px;
+          height:         36px;
+          padding:        0px;
+          vertical-align: middle;
+      }
+td.hole13 /*пуста€ €чейка в строке разделов*/
+      {
+          height:           36px;
+          vertical-align:   top;
+          padding-left:     0pt;
+          padding-top:      0pt;
+          padding-right:    0pt;
+          padding-bottom:   0pt;
+          margin-top:       0pt;
+          margin-left:      0pt;
+          margin-bottom:    0pt;
+          margin-right:     0pt;
+      }
+td.hole14 /*пуста€ €чейка справа*/
+      {
+          width:            173px;
+          height:           36px;
+          vertical-align:   top;
+          padding-left:     0pt;
+          padding-top:      0pt;
+          padding-right:    0pt;
+          padding-bottom:   0pt;
+          margin-top:       0pt;
+          margin-left:      0pt;
+          margin-bottom:    0pt;
+          margin-right:     0pt;
+      }
+td.left_chpt_name /* заголовок текстовой €чейки слева */
+      {
+          width:                160px;
+          height:               41px;
+          vertical-align:       top;
+          background-position:  top;
+          background-repeat:    no-repeat;
+          padding-left:         0pt;
+          padding-top:          0pt;
+          padding-right:        0pt;
+          padding-bottom:       0pt;
+          margin-top:           0pt;
+          margin-left:          0pt;
+          margin-bottom:        0pt;
+          margin-right:         0pt;
+      }
+div.left_chpt_name
+      {
+          width:       160px;
+          height:      41px;
+          padding:     0px;
+      }
+td.left_chpt_text /* текстова€ €чейка слева */
+      {
+          width:                160px;
+          height:               179px;
+          vertical-align:       top;
+          overflow:             hidden;
+          background-position:  top;
+          background-repeat:    no-repeat;
+          padding-left:         0pt;
+          padding-top:          0pt;
+          padding-right:        0pt;
+          padding-bottom:       0pt;
+          margin-top:           0pt;
+          margin-left:          0pt;
+          margin-bottom:        0pt;
+          margin-right:         0pt;
+      }
+td.left_chpt_b /* нижн€€ €чейка слева */
+    {
+      width:                160px;
+      height:               98px;
+      vertical-align:       top;
+      background-position:  top;
+      background-repeat:    no-repeat;
+      padding-left:         0pt;
+      padding-top:          0pt;
+      padding-right:        0pt;
+      padding-bottom:       0pt;
+      margin-top:           0pt;
+      margin-left:          0pt;
+      margin-bottom:        0pt;
+      margin-right:         0pt;
+    }
+td.right_chpt_t /* заголовок текстовой €чейки справа */
+    {
+      width:                173px;
+      height:               41px;
+      vertical-align:       top;
+      background-position:  top;
+      background-repeat:    no-repeat;
+      padding-left:         0pt;
+      padding-top:          0pt;
+      padding-right:        0pt;
+      padding-bottom:       0pt;
+      margin-top:           0pt;
+      margin-left:          0pt;
+      margin-bottom:        0pt;
+      margin-right:         0pt;
+    }
+td.right_chpt_b /* текстова€ €чейка справа */
+    {
+      width:                  173px;
+      height:                 277px;
+      vertical-align:         top;
+      background-position:    top;
+      background-repeat:      no-repeat;
+      padding-left:           0pt;
+      padding-top:            0pt;
+      padding-right:          0pt;
+      padding-bottom:         0pt;
+      margin-top:             0pt;
+      margin-left:            0pt;
+      margin-bottom:          0pt;
+      margin-right:           0pt;
+    }
+div.right_chpt_b /* текстова€ €чейка справа (внутри)*/
+    {
+      width:                169px;
+      height:               245px;
+      vertical-align:       top;
+      background-repeat:    no-repeat;
+      padding-left:         8pt;
+      padding-top:          0pt;
+      padding-right:        0pt;
+      padding-bottom:       0pt;
+      margin-top:           0pt;
+      margin-left:          0pt;
+      margin-bottom:        0pt;
+      margin-right:         0pt;
+    }
+td.main_txt
+    {
+      padding:        5px;
+      vertical-align: top;
+    }
+td.hole22
+    {
+      width:  160px;
+      height: 100%;
+    }
+td.hole23
+    {
+      width:  173px;
+      height: 100%;
+    }
+img /* изображение */
+    {
+      padding-left:   0pt;
+      padding-top:    0pt;
+      padding-right:  0pt;
+      padding-bottom: 0pt;
+      margin-bottom:  0pt;
+      margin-top:     0pt;
+     }
+img.inside_img /* изображение */
+    {
+      padding:  4px;
+      margin:   0pt;
+     }
+
+h1   /* заголовки */
+     {
+      color:          black;
+      font-family:    Century Gothic;
+      font-weight:    bold;
+      font-size:      12pt;
+      padding-left:   6pt;
+      padding-top:    4pt;
+      padding-bottom: 0pt;
+      padding-right:  0pt;
+      margin-top:     0pt;
+      margin-left:    0pt;
+      margin-bottom:  0pt;
+      margin-right:   0pt;
+     }
+h2   /* заголовки */
+     {
+      color:          black;
+      font-family:    Century Gothic;
+      font-weight:    bold;
+      font-size:      9pt;
+      padding-left:   6pt;
+      padding-top:    4pt;
+      padding-bottom: 0pt;
+      padding-right:  0pt;
+      margin-top:     0pt;
+      margin-left:    0pt;
+      margin-bottom:  0pt;
+      margin-right:   0pt;
+     }
+h2.work   /* заголовки */
+     {
+      color:          black;
+      font-family:    Century Gothic;
+      font-weight:    bold;
+      font-size:      9pt;
+      padding-left:   6pt;
+      padding-top:    0pt;
+      padding-bottom: 0pt;
+      padding-right:  0pt;
+      margin-top:     0pt;
+      margin-left:    0pt;
+      margin-bottom:  0pt;
+      margin-right:   0pt;
+     }
+        
+p       /* параграфы */
+     {
+       font-family:     Verdana;
+       font-size:       9pt;
+       text-align:      justify;
+       text-indent:     15pt;
+       margin-bottom:   0pt;
+       margin-top:      0pt;
+       padding-left:    6pt;
+       padding-top:     0pt;
+       padding-bottom:  4pt;
+       padding-right:   6pt;
+     }
+p.smallp /* боковые параграфы */
+     {
+       font-family:     Verdana;
+       font-size:       8pt;
+       text-indent:     10pt;
+       padding-left:    4pt;
+       padding-top:     2pt;
+       padding-bottom:  0pt;
+       padding-right:   6pt;
+       margin-top:      0pt;
+       margin-left:     0pt;
+       margin-bottom:   0pt;
+       margin-right:    0pt;
+     }
+p.news_smallp /* боковые параграфы */
+     {
+       font-family:     Verdana;
+       font-size:       8pt;
+       text-indent:     10pt;
+       padding-left:    14pt;
+       padding-top:     2pt;
+       padding-bottom:  0pt;
+       padding-right:   10pt;
+       margin-top:      0pt;
+       margin-left:     0pt;
+       margin-bottom:   0pt;
+       margin-right:    0pt;
+     }
+ul
+     {
+       font-family:         Verdana;
+       font-size:           9pt;
+       list-style-position: inside;
+       padding-left:        20pt;
+       padding-top:         0pt;
+       padding-bottom:      0pt;
+       padding-right:       6pt;
+       margin:              0pt;
+     }
+a
+     {
+       cursor: Pointer;
+     }
+a:link    { color: black }    /* непосещенна€ ссылка */
+a:visited { color: black }    /* посещенна€ ссылка */
+a:active  { color: black }    /* активна€ ссылка */
+a:hover   { color: #960014 }  /* ссылка, на которой расположен курсор мыши */

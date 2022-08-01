@@ -1,0 +1,146 @@
+
+  /*HTML Элементы*/
+
+body {
+  margin: 5px;
+  color: #333333;
+}
+
+h1,h2 {
+  text-align: center;
+}
+
+h1 {
+  font-size: 14pt;
+  font-weight: Normal;
+  margin-top: 14pt;
+  margin-bottom: 14pt;
+}
+
+h2 {
+  font-size: 10pt;
+  font-weight: bold;
+  margin-top: 10pt;
+  margin-bottom: 0pt;
+}
+
+ul,ol {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+ul.link {
+  padding: 4px;
+  margin: 0px;
+  list-style-type: none;
+}
+
+li {
+  text-align: justify;
+}
+
+a {
+  font-family: Verdana;
+  font-size: 10pt;
+  color: #333333;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+p {
+  text-indent: 20px;
+  text-align: justify;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+  /*Классы*/
+
+.alcenter {
+  text-align: center;
+  text-indent: 0px;
+}
+
+.logo {
+  text-align: right;
+  color: #9A9A9A;
+}
+
+  /*Таблици разметки*/
+
+table.main {
+  color: #333333;
+  border: solid 1px #9A9A9A;
+  border-collapse: collapse;
+  width: 850px;
+  height: 100%;
+}
+
+table.main td {
+  font-family: Verdana;
+  font-size: 10pt;
+  text-align: left;
+  vertical-align: top;
+  padding: 8px;
+  border: solid 1px #9A9A9A;
+}
+
+td.head {
+  height: 109px;
+  background-image: url(head.jpg);
+}
+
+td.nav {
+  width: 200px;
+  background-color: #F1F1F1;
+}
+
+td.content {
+  background-color: #F1F1F1;
+}
+
+td.end {
+  height: 80px;
+  background-color: #DBDBDB;
+  vertical-align: middle;
+}
+
+table.data {
+  color: #333333;
+  border: solid 1px #9A9A9A;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+table.data td {
+  font-family: Verdana;
+  font-size: 10pt;
+  text-align: left;
+  vertical-align: top;
+  padding: 2px;
+  border: solid 1px #9A9A9A;
+}
+
+table.data tr.head {
+  font-weight: bold;
+}
+
+table.data tr.head td {
+    text-align: center;
+  vertical-align: middle;
+}
+
+table.data td.number {
+  text-align: right;
+}
+
+
+
+
+
+
+
+

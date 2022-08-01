@@ -1,0 +1,64 @@
+body 
+{
+	font-family: Arial;
+  font-size: 10pt;
+  color: #333333;
+}
+
+table 
+{
+  font-family: Arial;
+  font-size: 10pt;
+}
+
+td 
+{
+  vertical-align: top;
+}
+
+table.main {
+  border: 2px solid #DDDDDD;
+}
+
+table.link {
+
+}
+
+table.link td {
+  background-color: #808080;
+  font-weight: bold;
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+  font-size: 10pt;
+  color: #333333;
+}
+
+table.link a {
+  font-size: 12pt;
+  color: white;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+p {
+  text-indent: 30px;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  text-align: justify;
+}
+
+p.news {
+  margin-left: 20px;
+  margin-right: 10px;
+  text-indent: 0px;
+  text-align: left;
+}
+
+h3 {
+  text-align: center;
+}
