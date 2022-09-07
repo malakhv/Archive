@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
-    Please specify all data files here
--->
-<resources xmlns:tools="http://schemas.android.com/tools"
-    tools:keep="@raw/*.dat" />

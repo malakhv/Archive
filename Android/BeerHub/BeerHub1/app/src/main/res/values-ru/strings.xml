@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string name="msg_fav_empty">Ваш список избранного в этом городе пуст…</string>
-    <string name="act_about">О программе</string>
-    <string name="act_settings">Настройки</string>
-    <string name="about_text">Каждый человек имеет право на кружку свежего вкусного пива!\n\nНаслаждейтесь, но не забывайте, чрезмерное употребление алкоголя вредит вашему здоровью!</string>
-    <string name="rate_app">Оценить приложение</string>
-    <string name="beer_for_dev">Кружку пива разработчикам!</string>
-</resources>
