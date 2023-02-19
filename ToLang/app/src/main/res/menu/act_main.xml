@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- The menu "Copy" - copy original, translation or both text to clipboard -->
+    <item android:id="@+id/copy"
+        android:title="@string/act_copy"
+        android:showAsAction="always"
+        android:icon="@android:drawable/ic_menu_set_as" ><menu>
+
+        <item android:id="@+id/copy_both"
+            android:orderInCategory="1"
+            android:title="@string/text_both"/>
+
+        <item android:id="@+id/copy_original"
+            android:orderInCategory="1"
+            android:title="@string/text_original"/>
+
+        <item android:id="@+id/copy_translation"
+            android:orderInCategory="2"
+            android:title="@string/text_translation"/>
+
+    </menu></item>
+
+    <!-- The menu "Share" - share original, translation or both text to another app -->
+    <item android:id="@+id/share"
+        android:title="@string/act_share"
+        android:showAsAction="always"
+        android:icon="@android:drawable/ic_menu_share" ><menu>
+
+        <item android:id="@+id/share_both"
+            android:orderInCategory="1"
+            android:title="@string/text_both"
+            android:actionProviderClass="com.devlear.tolang.core.ShareTextProvider"/>
+
+        <item android:id="@+id/share_original"
+            android:orderInCategory="1"
+            android:title="@string/text_original"
+            android:actionProviderClass="com.devlear.tolang.core.OriginalShareProvider"/>
+
+        <item android:id="@+id/share_translation"
+            android:orderInCategory="2"
+            android:title="@string/text_translation"
+            android:actionProviderClass="com.devlear.tolang.core.TranslateShareProvider"/>
+
+    </menu></item>
+
+    <!-- The menu "Clear" - clear original and translation texts -->
+    <item android:id="@+id/clear"
+        android:title="@string/act_clear"
+        android:showAsAction="ifRoom"
+        android:icon="@android:drawable/ic_menu_close_clear_cancel" />
+
+    <!-- The menu "Settings" - open app settings -->
+    <item android:id="@+id/settings"
+        android:title="Settings"
+        android:showAsAction="never"
+        android:orderInCategory="50"/>
+
+    <!-- The menu "About" - open about activity -->
+    <item android:id="@+id/about"
+        android:orderInCategory="100"
+        android:title="About"
+        android:showAsAction="never" />
+
+</menu>

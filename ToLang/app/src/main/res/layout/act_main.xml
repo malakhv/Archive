@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingStart="8dp" android:paddingLeft="8dp"
+    android:paddingEnd="8dp" android:paddingRight="8dp">
+
+    <!-- The main control block -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- The list of support languages for translation -->
+        <Spinner
+            android:id="@+id/languages"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_weight="0.6" />
+
+        <!-- The "Translate" button -->
+        <Button
+            android:id="@+id/translate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_weight="0.4"
+            android:text="@string/act_translate" />
+
+    </LinearLayout>
+
+    <!-- The original text -->
+    <EditText
+        android:id="@+id/original_text"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.35"
+        android:ems="10"
+        android:inputType="textMultiLine"
+        android:gravity="top|start"
+        android:background="@android:color/transparent">
+        <requestFocus />
+    </EditText>
+
+    <!-- The translated text -->
+    <TextView
+        android:id="@+id/translated_text"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.65"
+        android:padding="5dp"
+        android:gravity="top|start"
+        android:textIsSelectable="true"
+        android:text="@string/act_translate" />
+
+</LinearLayout>

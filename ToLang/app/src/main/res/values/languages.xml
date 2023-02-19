@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--
+        The support Languages' names array. Please keep it synchronized  with lang_codes array.
+    -->
+    <string-array name="lang_names">
+        <item >to English</item>
+        <item >to Russian</item>
+        <item >to French</item>
+        <item >to Italian</item>
+        <item >to German</item>
+        <item >to Spanish</item>
+        <item >to Portuguese</item>
+        <item >to Chinese</item>
+    </string-array>
+
+    <!--
+        The support Languages' codes array. Please keep it synchronized  with lang_names array.
+    -->
+    <string-array name="lang_codes" translatable="false">
+        <item >en</item>
+        <item >ru</item>
+        <item >fr</item>
+        <item >it</item>
+        <item >de</item>
+        <item >es</item>
+        <item >pt</item>
+        <item >zh</item>
+    </string-array>
+
+</resources>

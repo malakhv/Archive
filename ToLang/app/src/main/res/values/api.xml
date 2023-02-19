@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- The Yandex.Translation API key -->
+    <string name="yandex_api_key" translatable="false">trnsl.1.1.20140728T101027Z.e325c0e1e13c1d7e.06e38b62db4f7c1ff116e74af14284237b72cbd6</string>
+    <!-- The Yandex.Translation host -->
+    <string name="yandex_api_host" translatable="false">https://translate.yandex.net/api/v1.5/tr/translate</string>
+</resources>
