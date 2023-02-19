@@ -1,0 +1,20 @@
+/* *
+ * Copyright (C) 2018 DevLear - All Rights Reserved.
+ *
+ * This file is a part of BeerHub project.
+ *
+ * Confidential and Proprietary.
+ * Unauthorized copying of this file, via any medium is strictly prohibited.
+ * */
+
+/* *
+ * Android config. Please use it only for apps' modules.
+ * */
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.3"
+    defaultConfig {
+        minSdkVersion 23
+        targetSdkVersion 30
+    }
+}

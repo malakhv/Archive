@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Copyright (C) 2022 DevLear - All Rights Reserved.
+
+    This file is a part of TimeSync application.
+
+    Confidential and Proprietary.
+    Unauthorized copying of this file, via any medium is strictly prohibited.
+-->
+<resources>
+    <string name="time_24h_format">yyyy MM dd HH mm ss z</string>
+    <string name="time_12h_format">yyyy MM dd hh mm ss z</string>
+</resources>

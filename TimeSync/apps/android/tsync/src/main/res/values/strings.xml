@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Copyright (C) 2022 DevLear - All Rights Reserved.
+
+    This file is a part of TimeSync application.
+
+    Confidential and Proprietary.
+    Unauthorized copying of this file, via any medium is strictly prohibited.
+-->
+<resources>
+    <string name="app_name" translatable="false">TimeSync</string>
+    <string name="app_name_short" translatable="false">T-Sync</string>
+</resources>

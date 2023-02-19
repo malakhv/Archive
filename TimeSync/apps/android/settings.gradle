@@ -1,0 +1,12 @@
+/* *
+ * Copyright (C) 2022 DevLear - All Rights Reserved.
+ *
+ * This file is a part of TimeSync project.
+ *
+ * Confidential and Proprietary.
+ * Unauthorized copying of this file, via any medium is strictly prohibited.
+ * */
+
+rootProject.name = "TimeSync"
+include ':tsync'
+include ':jjy'

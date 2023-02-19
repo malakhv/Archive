@@ -1,0 +1,221 @@
+/* *
+ * Copyright (C) 2018 DevLear - All Rights Reserved.
+ *
+ * This file is a part of BeerHub application.
+ *
+ * Confidential and Proprietary.
+ * Unauthorized copying of this file, via any medium is strictly prohibited.
+ * */
+
+/* *
+ * This script contains classes, functions and definitions for load/save version code and version
+ * name. This script uses "Semantic Versioning 2.0.0" conception, for more information about this
+ * conception, please see http://semver.org/.
+ *
+ * The version name represents in format XX.YY.ZZZ[.DEBUG][COMMIT_ID][-BRANCH_NAME], where:
+ *
+ *      XX - major version (max value is 99)
+ *      YY - minor version (max value is 99)
+ *      ZZZ - number of patch (max value is 999)
+ *      DEBUG - the debug flag (only for debug build), may be null
+ *      BRANCH_NAME - the git branch name, for example "master"
+ *      COMMIT_ID - the first seven letters of git commit id, for example "94604e3"
+ *
+ * Below, you could see several examples of version name:
+ *
+ *      0.1.0.debug-master - initial (default) version for all new project (without any
+ *      commits and on default branch)
+ *
+ *      1.2.15.debug-master-94604e3 - debug build of version 1.2.15, where latest commit id
+ *      is 94604e3
+ *
+ *      1.3.0.master-94604e3 - release build of version 1.3.0 where latest commit id is 94604e3
+ *
+ * The initial (default) value of version is "0.1.0.debug-master".
+ *
+ * The version code calculate from version name by following rule:
+ *
+ *      XX * 100000 + YY * 1000 + ZZZ
+ *
+ * Several examples:
+ *
+ *      Name 0.1.0.debug-master-0000000 = Code 1000
+ *      Name 0.1.8.debug-develop-0000000 = Code 1008
+ *      Name 2.5.17.master-94604e3 = Code 205017
+ *      Name 99.88.777.debug-qa-0000000 = Code 9988777
+ *
+ * Author: Mikhail.Malakhov
+ * */
+
+/** The debug flag (global for this script). */
+def DEBUG = true
+
+/**
+ * Returns true, if BuildType is debug.
+ * */
+def boolean isDebug() {
+    def tasks = gradle.startParameter.taskNames
+    boolean debug = false;
+    for (int i = 0; i < tasks.size(); i++) {
+        if (tasks.get(i).contains("Debug")) {
+            debug = true; break;
+        }
+    }
+    return debug;
+}
+
+/**
+ * Class contains information about version. The version represents in format XX.YY.ZZZ, where:
+ * <ul>
+ *     <li>XX is major version</li>
+ *     <li>YY is minor version</li>
+ *     <li>ZZZ is number of patch</li>
+ * </ul>
+ * This version's format matches to "Semantic Versioning 2.0.0", for more details about this format,
+ * please see <a href="http://semver.org/">http://semver.org</a>.
+ *
+ * @author Mikhail.Malakhov
+ * */
+class Version {
+
+    protected int major = 0 // 0..99
+    protected int minor = 1 // 0..99
+    protected int patch = 0 // 0..999
+    protected boolean debug // release or debug
+
+    public Version(boolean debug) {
+        this.debug = debug;
+        load();
+    }
+
+    public Version() { this(true); }
+
+    /**
+     * Returns the version code depends on version name.
+     * */
+    public int getCode() {
+        return major * 100000 + minor * 1000 + patch;
+    }
+
+    /** Load version from file */
+    public void load() {
+        def file = new File("version")
+        def prop = new Properties()
+        if (!file.exists()) return
+        file.withInputStream { prop.load(it) }
+        major = Integer.parseInt(prop.getProperty("MAJOR", String.valueOf(major))) % 100
+        minor = Integer.parseInt(prop.getProperty("MINOR", String.valueOf(minor))) % 100
+        patch = Integer.parseInt(prop.getProperty("PATCH", String.valueOf(patch))) % 1000
+    }
+
+    /** Save version to file */
+    public void save() {
+        def file = new File("version")
+        def prop = new Properties()
+        prop.setProperty("MAJOR", String.valueOf(major))
+        prop.setProperty("MINOR", String.valueOf(minor))
+        prop.setProperty("PATCH", String.valueOf(patch))
+        file.withOutputStream { prop.store(it, "App Version") }
+    }
+
+    /**
+     * Returns a string representation of this object in format  XX.YY.ZZZ. For more details about
+     * this format, please see description of this class.
+     * */
+    @Override
+    public String toString() {
+        return "${major}.${minor}.${patch}" + (debug ? ".debug": "");
+    }
+}
+
+/**
+ * Class contains information about version with any additional (extended) information.
+ * @author Mikhail.Malakhov
+ * */
+class ExtVersion extends Version {
+    public ExtVersion(boolean debug) { super(debug); }
+    protected String getExtVersion() { return ""; }
+
+    @Override
+    String toString() {
+        String version = super.toString();
+        String ext = getExtVersion();
+        if (!version.isEmpty() && !ext.isEmpty()) {
+            return version + ext;
+        } else {
+            return version;
+        }
+    }
+}
+
+/**
+ * Class contains information about app version with extended information (commit id, branch name).
+ * @author Mikhail.Malakhov
+ * */
+class AppVersion extends ExtVersion {
+
+    AppVersion(boolean debug) {
+        super(debug);
+    }
+
+    @Override
+    protected String getExtVersion() {
+        String data = ""
+
+        // Current branch
+        String branch = Git.getBranch();
+        if (branch.isEmpty()) {
+            branch = "unknown"
+        }
+        data = (debug ? "-" : ".") + branch
+
+        // Commit ID
+        String id = Git.getCommitId();
+        if (!id.isEmpty()) {
+            data = data + "-" + id
+        }
+
+        println("data: ${data}")
+
+        return data;
+    }
+}
+
+/**
+ * Class contains some methods for retrieve information from git repo.
+ * @author Mikhail.Malakhov
+ * */
+class Git {
+
+    static String getBranch() {
+        return execCmd("git rev-parse --abbrev-ref HEAD");
+    }
+
+    static String getCommitId() {
+        return execCmd("git rev-parse --short HEAD");
+    }
+
+    static int getCommitCount() {
+        String value = execCmd("git rev-list --count HEAD");
+        return value.isEmpty() ? 0 : Integer.parseInt(value);
+    }
+
+    private static String execCmd(String cmd) {
+        return cmd.execute([], null).text.trim()
+    }
+}
+
+/**
+ * Update default configuration with version name and code
+ * */
+android {
+    defaultConfig {
+        Version version = new AppVersion(isDebug())
+        versionCode version.getCode()
+        versionName = version
+        if (DEBUG) {
+            println("Version code: ${version.getCode()}")
+            println("Version name: ${versionName}")
+        }
+    }
+}

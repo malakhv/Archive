@@ -1,0 +1,37 @@
+/* *
+ * Copyright (C) 2022 DevLear - All Rights Reserved.
+ *
+ * This file is a part of TimeSync project.
+ *
+ * Confidential and Proprietary.
+ * Unauthorized copying of this file, via any medium is strictly prohibited.
+ * */
+
+/* *
+ * Top-level build file where you can add configuration options common
+ * to all sub-projects/modules.
+ * */
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath "com.android.tools.build:gradle:4.2.2"
+    }
+}
+allprojects {
+    repositories {
+        google()
+        jcenter()
+        mavenCentral()
+        maven {
+            allowInsecureProtocol = true
+            url "http://maven.malakhv.com/"
+        }
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

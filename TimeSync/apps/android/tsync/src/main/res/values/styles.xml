@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Copyright (C) 2022 DevLear - All Rights Reserved.
+
+    This file is a part of TimeSync application.
+
+    Confidential and Proprietary.
+    Unauthorized copying of this file, via any medium is strictly prohibited.
+-->
+<resources>
+
+    <!-- The "Green" theme -->
+    <style name="GreenTheme" parent="android:Theme.Material.Light.DarkActionBar">
+
+    </style>
+
+    <!-- Base app theme for Activities without action bar -->
+    <style name="GreenTheme.NoActionBar" parent="GreenTheme">
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="android:Theme.Material.Light.DarkActionBar">
+
+    </style>
+
+    <!-- Base app theme for Activities without action bar -->
+    <style name="AppTheme.NoActionBar" parent="AppTheme">
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+    <style name="AppButton" >
+        <item name="android:textColor">?android:colorPrimaryDark</item>
+    </style>
+
+</resources>
