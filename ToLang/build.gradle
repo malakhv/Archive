@@ -13,8 +13,8 @@ allprojects {
     repositories {
         google()
         jcenter()
-        maven { url "http://maven.devlear.com/" }
-        maven { url "http://maven.malakhv.com/" }
+        //maven { url "http://maven.devlear.com/" }
+        //maven { url "http://maven.malakhv.com/" }
     }
 }
 
