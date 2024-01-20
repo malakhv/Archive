@@ -111,12 +111,12 @@ begin
   WayForm.NodeBox.Items.Clear;
   if NodePanel.Selected = nil then Exit;
   WayForm.lblNumber.Caption := IntToStr(NodePanel.Selected.Number);
-  // Определение подходящих узлов назначения
+  // РћРїСЂРµРґРµР»РµРЅРёРµ РїРѕРґС…РѕРґСЏС‰РёС… СѓР·Р»РѕРІ РЅР°Р·РЅР°С‡РµРЅРёСЏ
   for i := 0 to Length(NodePanel.Items) - 1 do
   begin
     if NodePanel.Items[i] = NodePanel.Selected then Continue;
     f := true;
-    // если уже есть путь, в список не включаем
+    // РµСЃР»Рё СѓР¶Рµ РµСЃС‚СЊ РїСѓС‚СЊ, РІ СЃРїРёСЃРѕРє РЅРµ РІРєР»СЋС‡Р°РµРј
     for j := 0 to Length(NodePanel.Selected.Links) - 1 do
     begin
       if NodePanel.Selected.Links[j].Index = i then
@@ -227,13 +227,13 @@ begin
   NodePanel.Items[0].Metka.Node   := -1;
   NodePanel.Items[0].Metka.MType  := mtConst;
 
-  str := 'Узел '+IntToStr(1) + '  Метка ' +'  ['+ IntToStr(0)+':'+ '-]' + '  ' + 'П';
+  str := 'РЈР·РµР» '+IntToStr(1) + '  РњРµС‚РєР° ' +'  ['+ IntToStr(0)+':'+ '-]' + '  ' + 'Рџ';
   ResList.Items.Add(str);
 
   flag := false;
   while flag = false do
   begin
-    //просмотр меток узлов, в которые можно попасть из данного
+    //РїСЂРѕСЃРјРѕС‚СЂ РјРµС‚РѕРє СѓР·Р»РѕРІ, РІ РєРѕС‚РѕСЂС‹Рµ РјРѕР¶РЅРѕ РїРѕРїР°СЃС‚СЊ РёР· РґР°РЅРЅРѕРіРѕ
     //
     for i := 0 to Length(NodePanel.Items[CurrentNode].Links) - 1 do
     begin
@@ -243,15 +243,15 @@ begin
       if NodePanel.Items[j].Metka.MType = mtConst then Continue;
       if(NodePanel.Items[j].Metka.MType <> mtNone)and
         (NodePanel.Items[j].Metka.Length <= lngth) then Continue;
-      // замена метки
+      // Р·Р°РјРµРЅР° РјРµС‚РєРё
       NodePanel.Items[j].Metka.Length := lngth;
       NodePanel.Items[j].Metka.Node   := CurrentNode;
       NodePanel.Items[j].Metka.MType  := mtTime;
-      str := 'Узел '+IntToStr(j+1) +'  Метка ' + '  ['+ IntToStr(lngth)+
-                                   ':'+IntToStr(CurrentNode+1) + ']  ' + 'В';
+      str := 'РЈР·РµР» '+IntToStr(j+1) +'  РњРµС‚РєР° ' + '  ['+ IntToStr(lngth)+
+                                   ':'+IntToStr(CurrentNode+1) + ']  ' + 'Р’';
       ResList.Items.Add(str);
     end;
-    // проверка, все ли метки постоянные
+    // РїСЂРѕРІРµСЂРєР°, РІСЃРµ Р»Рё РјРµС‚РєРё РїРѕСЃС‚РѕСЏРЅРЅС‹Рµ
     flag := true;
     for i := 0 to Length(NodePanel.Items) - 1 do
     begin
@@ -264,7 +264,7 @@ begin
 
     min := -1;
     minlngth := 999999999;
-    // поиск минимального значения пути (след. шаг ищем в общем)
+    // РїРѕРёСЃРє РјРёРЅРёРјР°Р»СЊРЅРѕРіРѕ Р·РЅР°С‡РµРЅРёСЏ РїСѓС‚Рё (СЃР»РµРґ. С€Р°Рі РёС‰РµРј РІ РѕР±С‰РµРј)
     if not flag then
     begin
       for i := 0 to Length(NodePanel.Items[CurrentNode].Links) - 1 do
@@ -284,8 +284,8 @@ begin
       NodePanel.Items[min].Metka.Length := lngth;
       NodePanel.Items[min].Metka.Node   := CurrentNode;
       NodePanel.Items[min].Metka.MType  := mtConst;
-      str := 'Узел '+IntToStr(min + 1) + '  Метка ' + '  ['+ IntToStr(lngth)+
-                                      ':'+IntToStr(CurrentNode+1) + ']  ' + 'П';
+      str := 'РЈР·РµР» '+IntToStr(min + 1) + '  РњРµС‚РєР° ' + '  ['+ IntToStr(lngth)+
+                                      ':'+IntToStr(CurrentNode+1) + ']  ' + 'Рџ';
       ResList.Items.Add(str);
       CurrentNode := min;
     end
@@ -295,8 +295,8 @@ begin
   end;
 
   SetLength(Res,0);
-  // Ищем путь
-  CurrentNode := Node2-1; // если Node2 - номер узла
+  // РС‰РµРј РїСѓС‚СЊ
+  CurrentNode := Node2-1; // РµСЃР»Рё Node2 - РЅРѕРјРµСЂ СѓР·Р»Р°
   lngth := NodePanel.Items[Node2-1].Metka.Length;
   while CurrentNode <> Node1-1 do
   begin

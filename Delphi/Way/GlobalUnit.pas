@@ -2,15 +2,15 @@ unit GlobalUnit;
 interface
 
 type TNodeInfo = record
-       Index: integer;    //Индекс в массиве
-       Top  : integer;    // Координаты верхнего
-       left : integer;    //     левого угла
+       Index: integer;    //РРЅРґРµРєСЃ РІ РјР°СЃСЃРёРІРµ
+       Top  : integer;    // РљРѕРѕСЂРґРёРЅР°С‚С‹ РІРµСЂС…РЅРµРіРѕ
+       left : integer;    //     Р»РµРІРѕРіРѕ СѓРіР»Р°
      end;
 
 type TWaysInfo = record
-       Source  : integer; // Источник
-       Receiver: integer; // Приемник
-       Length: Integer;   // Длина пути
+       Source  : integer; // РСЃС‚РѕС‡РЅРёРє
+       Receiver: integer; // РџСЂРёРµРјРЅРёРє
+       Length: Integer;   // Р”Р»РёРЅР° РїСѓС‚Рё
       end;
 
 const node_info_size = SizeOf(TNodeInfo);
