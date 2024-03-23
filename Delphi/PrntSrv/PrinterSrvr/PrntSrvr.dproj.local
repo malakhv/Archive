@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>1899.12.30 00:00:00.000.pas,C:\Documents and Settings\b1ind\Мои документы\Borland Studio Projects\PrntSrv\PrinterSrvr\GlPrSrv.pas=C:\Documents and Settings\b1ind\Мои документы\Borland Studio Projects\PrntSrv\PrinterSrvr\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.pas,C:\Documents and Settings\b1ind\Мои документы\Borland Studio Projects\PrntSrv\PrinterSrvr\PrntNtfcThr.pas=C:\Documents and Settings\b1ind\Мои документы\Borland Studio Projects\PrntSrv\PrinterSrvr\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.pas,C:\Documents and Settings\b1ind\Мои документы\Borland Studio Projects\PrntSrv\PrinterSrvr\GlobalPrSrv.pas=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.pas,C:\Documents and Settings\b1ind\Мои документы\Borland Studio Projects\PrntSrv\PrinterSrvr\GlobalPrSrv.pas=C:\Documents and Settings\b1ind\Мои документы\Borland Studio Projects\PrntSrv\PrinterSrvr\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.pas,C:\Documents and Settings\b1ind\Мои документы\Borland Studio Projects\PrntSrv\PrinterSrvr\MainUnit.pas=C:\Documents and Settings\b1ind\Мои документы\Borland Studio Projects\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.pas,C:\Documents and Settings\b1ind\Мои документы\Borland Studio Projects\PrntSrv\PrinterSrvr\MsgPrSrv.pas=C:\Documents and Settings\b1ind\Мои документы\Borland Studio Projects\PrntSrv\PrinterSrvr\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.pas,C:\Documents and Settings\b1ind\Мои документы\Borland Studio Projects\PrntSrv\PrinterSrvr\ThrClct.pas=C:\Documents and Settings\b1ind\Мои документы\Borland Studio Projects\PrntSrv\PrinterSrvr\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.dfm,C:\Documents and Settings\b1ind\Мои документы\Borland Studio Projects\PrntSrv\PrinterSrvr\MainUnit.dfm=C:\Documents and Settings\b1ind\Мои документы\Borland Studio Projects\Unit1.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.pas,C:\Documents and Settings\b1ind\Мои документы\Borland Studio Projects\PrntSrv\Global.pas=C:\Documents and Settings\b1ind\Мои документы\Borland Studio Projects\PrntSrv\PrinterSrvr\Unit1.pas</Transaction>
+  </Transactions>
+</BorlandProject>
