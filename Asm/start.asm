@@ -14,7 +14,7 @@
     .globl _start;
 
 //
-// Programm Entry Point
+// Program Entry Point
 //
 _start:
 
